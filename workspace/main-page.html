@@ -5,21 +5,30 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Document</title>
   <style>
+    /*////////////////////////////////////////////// 전체 ///////////////////////////////////////////////*/
+    hr{
+      background: rgba(175, 175, 175, 0.5);
+      height: 1px;
+      border: 0;
+    }
+    body{
+      font-size: 12px;
+      background-color: white;
+    }
+    /*///////////////////////////////////////////////////////////////////////////////////////////////////*/
+    /*////////////////////////////////////////////// 링크 ///////////////////////////////////////////////*/
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
     .link-img {
       width: 11px;
       padding-left: 5px;
       padding-right: 5px;
     }
-    .banner-img{
-      text-align: center;
-    }
     #link-span {
       padding-left: 10px;
-    }
-    .user-link a {
-      text-decoration: none;
-      margin-right: 10px;
-      margin-left: 10px;
     }
     .link a{
       text-decoration: none;
@@ -39,41 +48,103 @@
       background: white;
       padding: 10px;
     }
-    .menu-over1 {
+    .link-submenu {
       display: inline-block;
     }
-    .menulist01-border {
-      border: 1px solid rgb(204, 204, 204);
-      border-radius: 5px;
-    }
-    ul {
+    .link-submenu ul {
       padding-left: 5px;
     }
-    .navbar {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+    .menulist-border {
+      border: 1px solid rgb(204, 204, 204);
+      border-radius: 5px;
     }
     .user-link {
       display: flex;
       align-items: center;
     }
+    .user-link a {
+      text-decoration: none;
+      margin-right: 10px;
+      margin-left: 10px;
+    }
+    /*///////////////////////////////////////////////////////////////////////////////////////////////////*/
+    /*////////////////////////////////////////////// 배너 ///////////////////////////////////////////////*/
+    .banner-img{
+      text-align: center;
+    }
+    /*///////////////////////////////////////////////////////////////////////////////////////////////////*/
+    /*//////////////////////////////////////////// 카데고리 /////////////////////////////////////////////*/
     .category-bar{
       text-align: center;
+      display: block;
+      position: sticky;
+      top: 0;
+      left: 0;
+      right: 0;
+      border-top: 1px solid #e4e4e4;
+      border-bottom: 1px solid #e4e4e4;
+      padding-top: 15px;
+      padding-bottom: 15px;
+      background-color: rgba(255, 255, 255, 0.9);
+      z-index: 3;
+    }
+    .category-bar ul{
+      margin: 0;
+      padding: 0;
     }
     .category-bar li{
       display: inline;
+      padding: 0;
       margin: 15px;
+      padding: 0;
     }
     .category-bar a{
       text-decoration: none;
+      padding-top: 15px;
+      padding-bottom: 15px;
     }
-    .slider img {
-      height: 440px;
+    .cList{
+      position: relative;
     }
+    .category-list{
+      position: absolute;
+      border: 1px solid rgba(230, 230, 230, 0.9);
+      background: rgba(255, 255, 255, 0.9);
+      margin-top: 15.5px;
+      top: 100%;
+      left: 0;
+      width: 160px;
+      padding: 10px;
+      z-index: 2;
+    }
+    .category-list li{
+      padding: 10px;
+    }
+    .category-list-arrow{
+      content: "";
+      position: absolute;
+      top: -10px;
+      left: 10px;
+      display: inline-block;
+      width: 0;
+      height: 0;
+      border-left: 8px solid transparent;
+      border-right: 8px solid transparent;
+      border-top: 10px solid rgba(230, 230, 230, 0.9);
+      transform: rotate(180deg);
+    }
+    /*///////////////////////////////////////////////////////////////////////////////////////////////////*/
+    /*//////////////////////////////////////////// 슬라이더 /////////////////////////////////////////////*/
     .slider {
       text-align: center;
       position: relative;
+      height: 440px;
+      margin-top: 0px;
+      display: block;
+      unicode-bidi: isolate;
+      z-index: 1;
+    }
+    .slider img {
       height: 440px;
     }
     .slide {
@@ -85,40 +156,118 @@
       left: 0;
       width: 100%;
       height: 100%;
+      z-index: 1;
     }
     .slide.active {
       opacity: 1;
     }
-    .img3 {
-      background-color: #e8cce5;
+    .sButton{
+      text-align: center;
+      position: relative;
+      padding: 0px;
     }
+    .sButtons{
+      position: absolute;
+      bottom: 110%;
+      width: 100%;
+      z-index: 2;
+    }
+    .sButtons-item{
+      display: inline-block;
+      vertical-align: bottom;
+    }
+    .link-button{
+      background-color: #e4e4e4;
+      text-indent: -9999px;
+      display: block;
+      width: 10px;
+      height: 10px;
+      margin: 0.5px;
+      outline: 0;
+      border-radius: 5px;
+    }
+    .link-button.active{
+      background-color: rgba(0, 0, 0, 0.6);
+    }
+    /*///////////////////////////////////////////////////////////////////////////////////////////////////*/
 
+
+    .container{
+    }
+    .content_m{
+    }
+    .main-banner ul{
+      justify-content: center;
+      display: flex;
+      padding: 0;
+      margin: 0 auto;
+    }
+    .main-banner-list{
+      list-style-type: none;
+      text-align: left;
+      width: 300px;
+      height: 150px;
+      margin-left: 30px;
+    }
+    .main-banner-list img{
+      width: 300px;
+    }
+    .main-banner-list a{
+      padding: 10px;
+      margin: 10px;
+      text-decoration-line: none;
+    }
+    .best-banner{
+    }
+    .best-banner ul{
+      list-style-type: none;
+      display: flex;
+      justify-content: center;
+    }
+    .best-list{
+      padding-left: 50px;
+    }
+    .best-contents {
+      position: relative;
+      height: 200px; /* 적절한 높이 값으로 수정하세요 */
+    }
+    .best-items {
+      opacity: 0;
+      transition: opacity 1s ease-in-out;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+    }
+    .best-items.active {
+      opacity: 1;
+    }
   </style>
 </head>
 <body>
   <header>
-    <nav class="navbar">
-      <div class="link">
-        <a href="#" target="_blank">
+    <nav class="navbar"> <!-- nav 태그 -->
+      <div class="link"> <!-- 링크 -->
+        <a href="#" target="_blank"> <!-- 북마크 -->
           <span>
             <img src="img/home.PNG" class="link-img" alt="home" />BOOKMARK
           </span>
         </a>
         |
-        <a href="#" target="_blank">
+        <a href="#" target="_blank"> <!-- 바로가기 아이콘 -->
           <span id="link-span">ADD ICON</span>
         </a>
         |
-        <div class="menu-over1">
+        <div class="link-submenu"> <!-- 검색 -->
           <ul>
             <li class="list" onmouseover="showMenu()" onmouseout="hideMenu()">
               <a href="#">
                 <img src="img/serch.png" class="link-img" alt="search" />
                 SEARCH
               </a>
-              <div class="list-on menulist01" id="menuList">
+              <div class="list-on menulist" id="menuList">
                 <form id="serchBartForm" action="#" method="get">
-                  <fieldset class="menulist01-border">
+                  <!-- <fieldset class="menulist01-border"> -->
                     <p>검색하실 내용을 입력하세요 :)</p>
                     <input type="text" name="query" />
                     <input type="submit" value="Search" />
@@ -129,67 +278,195 @@
           </ul>
         </div>
       </div>
-      <div class="user-link">
-        <a href="#">LOGIN</a>
+      <div class="user-link"> <!-- 유저페이지 -->
+        <a href="#">LOGIN</a> <!-- 로그인 -->
         |
-        <a href="#">JOIN</a>
+        <a href="#">JOIN</a> <!-- 회원가입 -->
         |
-        <a href="#">MY PAGE</a>
+        <a href="#">MY PAGE</a> <!-- 회원페이지 -->
         |
-        <a href="#">CART</a>
+        <a href="#">CART</a> <!-- 장바구니 -->
         |
-        <a href="#">ORDER</a>
+        <a href="#">ORDER</a> <!-- 주문내역 -->
       </div>
     </nav>
     <hr>
-    <h1 class="banner-img">
+    <h1 class="banner-img"> <!-- 배너이미지 -->
       <a href="main-page.html">
         <img src="img/banner-image.PNG" alt="banner image">
       </a>
     </h1>
-    <hr>
-    <div class="category-bar">
+    <div class="category-bar"> <!-- 카테고리 메뉴 -->
       <ul>
-        <li>
+        <li>  <!-- 사료 -->
           <a href="#">사료</a>
         </li>
-        <li>
+        <li class="cList">  <!-- 간식 -->
           <a href="#">간식</a>
+          <div class="category-list" style="display: none;">
+            <ul>
+              <div class="category-list-arrow"></div>
+              <li>
+                <a href="#">껌</a>
+              </li>
+              <hr>
+              <li>
+                <a href="#">캔/통조림</a>
+              </li>
+              <hr>
+              <li>
+                <a href="#">육포사사미(대용량)</a>
+              </li>
+              <hr>
+              <li>
+                <a href="#">육포사사미(소용량)</a>
+              </li>
+              <hr>
+              <li>
+                <a href="#">소세지/습식간식</a>
+              </li>
+            </ul>
+          </div>
         </li>
-        <li>
+        <li class="cList">  <!-- 목욕용품 -->
           <a href="#">목욕용품</a>
+          <div class="category-list" style="display: none;">
+            <ul>
+              <div class="category-list-arrow"></div>
+              <li>
+                <a href="#">타올/기타</a>
+              </li>
+              <hr>
+              <li>
+                <a href="#">약용샴푸</a>
+              </li>
+              <hr>
+              <li>
+                <a href="#">샴푸린스겸용</a>
+              </li>
+              <hr>
+              <li>
+                <a href="#">린스</a>
+              </li>
+              <hr>
+              <li>
+                <a href="#">샴푸</a>
+              </li>
+            </ul>
+          </div>
         </li>
-        <li>
+        <li class="cList">  <!-- 영양제/의약외품/치아관리 -->
           <a href="#">영양제/의약외품/치아관리</a>
+          <div class="category-list" style="display: none;">
+            <ul>
+              <div class="category-list-arrow"></div>
+              <li>
+                <a href="#">종합영양제</a>
+              </li>
+            </ul>
+          </div>
         </li>
-        <li>
+        <li class="cList">  <!-- 위생/배변/패드 -->
           <a href="#">위생/배변/패드</a>
+          <div class="category-list" style="display: none;">
+            <ul>
+              <div class="category-list-arrow"></div>
+              <li>
+                <a href="#">배변판/패드</a>
+              </li>
+              <hr>
+              <li>
+                <a href="#">기저귀/팬티</a>
+              </li>
+            </ul>
+          </div>
         </li>
-        <li>
+        <li>  <!-- 이동용품/애견줄/하우스 -->
           <a href="#">이동용품/애견줄/하우스</a>
         </li>
-        <li>
+        <li>  <!-- 안전문/철장 -->
           <a href="#">안전문/철장</a>
         </li>
-        <li>
+        <li>  <!-- 장난감/훈련용품 -->
           <a href="#">장난감/훈련용품</a>
         </li>
-        <li>
+        <li class="cList">  <!-- 급식기/급수기 -->
           <a href="#">급식기/급수기</a>
+          <div class="category-list" style="display: none;">
+            <ul>
+              <div class="category-list-arrow"></div>
+              <li>
+                <a href="#">급식기/급수기</a>
+              </li>
+              <hr>
+              <li>
+                <a href="#">쌍식기</a>
+              </li>
+              <hr>
+              <li>
+                <a href="#">사료 보관통</a>
+              </li>
+            </ul>
+          </div>
         </li>
-        <li>
+        <li>  <!-- 고양이 사료 -->
           <a href="#">고양이 사료</a>
         </li>
-        <li>
+        <li class="cList">  <!-- 고양이 간식 -->
           <a href="#">고양이 간식</a>
+          <div class="category-list" style="display: none;">
+            <ul>
+              <div class="category-list-arrow"></div>
+              <li>
+                <a href="#">간식캔</a>
+              </li>
+              <hr>
+              <li>
+                <a href="#">파우치</a>
+              </li>
+              <hr>
+              <li>
+                <a href="#">져키/동결건조</a>
+              </li>
+              <hr>
+              <li>
+                <a href="#">스낵&드롭스</a>
+              </li>
+              <hr>
+              <li>
+                <a href="#">통살&닭가슴살</a>
+              </li>
+            </ul>
+          </div>
         </li>
-        <li>
+        <li class="cList">  <!-- 모래/화장실/식시 -->
           <a href="#">모래/화장실/식시</a>
+          <div class="category-list" style="display: none;">
+            <ul>
+              <div class="category-list-arrow"></div>
+              <li>
+                <a href="#">모래</a>
+              </li>
+              <hr>
+              <li>
+                <a href="#">화장실</a>
+              </li>
+              <hr>
+              <li>
+                <a href="#">급식기/급수기</a>
+              </li>
+              <hr>
+              <li>
+                <a href="#">쌍식기</a>
+              </li>
+            </ul>
+          </div>
         </li>
       </ul>
     </div>
-    <hr>
-    <div class="slider" id="slider">
+  </header>
+  <slider>
+    <div class="slider" id="slider"> <!-- 슬라이더 메뉴 -->
       <div class="slides">
         <a href="#" class="slide"> <!-- 간식 -->
           <img src="img/pet01.png">
@@ -206,43 +483,298 @@
         </a>
       </div>
     </div>
+    <div class="sButton"> <!-- 버튼1 -->
+      <div class="sButtons">
+        <div class="sButtons-item">
+          <a href="#" class="link-button">1</a>
+        </div>
+        <div class="sButtons-item">
+          <a href="#" class="link-button">2</a>
+        </div>
+        <div class="sButtons-item">
+          <a href="#" class="link-button">3</a>
+        </div>
+      </div>
+    </slider>
     <hr>
-  </header>
+  <div class="container">
+    <div class="content_m">
+      <div class="main-banner">
+        <ul>
+          <li class="main-banner-list">
+            <a href="#">
+              <img src="img/content01.png" alt="join">
+            </a>
+          </li>
+          <li class="main-banner-list">
+            <a href="#">
+              <img src="img/content02.png" alt="join">
+            </a>
+          </li>
+          <li class="main-banner-list">
+            <a href="#">
+              <img src="img/content03.png" alt="join">
+            </a>
+          </li>
+          <li class="main-banner-list">
+            <a href="#">
+              <img src="img/content04.png" alt="join">
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="content-best">
+      <h1>weekly best</h1>
+      <div class="best-banner">
+        <ul>
+          <li class="best-list">
+            <a href="#" data-target="0">사료</a>
+          </li>
+          <li class="best-list">
+            <a href="#" data-target="1">간식</a>
+          </li>
+          <li class="best-list">
+            <a href="#" data-target="2">목욕/미용</a>
+          </li>
+          <li class="best-list">
+            <a href="#" data-target="3">영양제/의약외품/치아관리</a>
+          </li>
+          <li class="best-list">
+            <a href="#" data-target="4">위생/배변/패드</a>
+          </li>
+        </ul>
+        <div class="best-contents">
+          <div class="best-items active"> <!-- 사료 -->
+            <ul class="best-item">
+              <li>
+                <a href="#">
+                  <img src="#" alt="11">
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <img src="#" alt="name">
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <img src="#" alt="name">
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <img src="#" alt="name">
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <img src="#" alt="name">
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="best-items"> <!-- 간식 -->
+            <ul class="best-item">
+              <li>
+                <a href="#">
+                  <img src="#" alt="22">
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <img src="#" alt="name">
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <img src="#" alt="name">
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <img src="#" alt="name">
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <img src="#" alt="name">
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="best-items"> <!-- 목욕/미용 -->
+            <ul class="best-item">
+              <li>
+                <a href="#">
+                  <img src="#" alt="33">
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <img src="#" alt="name">
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <img src="#" alt="name">
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <img src="#" alt="name">
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <img src="#" alt="name">
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="best-items"> <!-- 영양제/의약외품/치아관리 -->
+            <ul class="best-item">
+              <li>
+                <a href="#">
+                  <img src="#" alt="44">
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <img src="#" alt="name">
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <img src="#" alt="name">
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <img src="#" alt="name">
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <img src="#" alt="name">
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="best-items"> <!-- 위생/배변/패드 -->
+            <ul class="best-item">
+              <li>
+                <a href="#">
+                  <img src="#" alt="55">
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <img src="#" alt="name">
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <img src="#" alt="name">
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <img src="#" alt="name">
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <img src="#" alt="name">
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
   
   
 
 
 
   <script>
+    ///////////////////////////// 마우스 on/off 01 /////////////////////////////
+
     //마우스가 위에 있을 시 메뉴 보이게 하기
     function showMenu() {
       document.getElementById("menuList").style.display = "block";
     }
-
+    //마우스가 위에 없을 시 메뉴 숨기기
     function hideMenu() {
       document.getElementById("menuList").style.display = "none";
     }
+    ////////////////////////////////////////////////////////////////////////////
+    ///////////////////////////// 마우스 on/off 02 /////////////////////////////
 
-    //슬라이드 효과
+    //마우스가 위에 있을 시 리스트 보이게 하는 함수
+    function showList() {
+      const showCategory=this.querySelector(".category-list");
+      showCategory.style.display="block";
+    }
+    //마우스가 위에 없을 시 리스트 숨기는 함수
+    function hideList() {
+      const hideCategory=this.querySelector(".category-list");
+      hideCategory.style.display="none";
+    }
+    //이벤트 리스너를 각 cList 항목에 추가
+    document.querySelectorAll(".cList",).forEach(item=>{
+      item.addEventListener("mouseover",showList)
+      item.addEventListener("mouseout",hideList)
+    })
+    ////////////////////////////////////////////////////////////////////////////
+    ///////////////////////////// 슬라이드 효과 ///////////////////////////////
+
+    let intervalId;
     let currentIndex = 0;
     const slides = document.querySelectorAll('.slide');
-
+    const linkButtons = document.querySelectorAll('.link-button');
+    
+    //슬라이드 투명효과 함수
     function showNextSlide() {
       slides[currentIndex].classList.remove('active');
+      linkButtons[currentIndex].classList.remove('active');
       currentIndex = (currentIndex + 1) % slides.length;
       slides[currentIndex].classList.add('active');
-      if(currentIndex===1){
-        slides[currentIndex].style.backgroundColor="#afe3f8"
-      } else if(currentIndex===2){
-        slides[currentIndex].style.backgroundColor="#e8cce5"
-      } else if(currentIndex===0){
-        slides[currentIndex].style.backgroundColor="#f2b8b4"
+      linkButtons[currentIndex].classList.add('active');
+      setSlideBackgroundColor(currentIndex);
+    }
+
+    //슬라이드 될시 배경색 수정하는 함수
+    function setSlideBackgroundColor(index) {
+      if (index === 1) {
+        slides[index].style.backgroundColor = "#afe3f8";
+      } else if (index === 2) {
+        slides[index].style.backgroundColor = "#e8cce5";
+      } else if (index === 0) {
+        slides[index].style.backgroundColor = "#f2b8b4";
       }
     }
+
+    //슬라이드 버튼 클릭시 해당 슬라이드로 이동하는 함수
+    function slideButton(event) {
+      stopSlides();
+      slides[currentIndex].classList.remove('active');
+      linkButtons[currentIndex].classList.remove('active');
+      currentIndex = Array.from(linkButtons).indexOf(event.target);
+      slides[currentIndex].classList.add('active');
+      linkButtons[currentIndex].classList.add('active');
+      setSlideBackgroundColor(currentIndex);
+      startSlides();
+    }
+
+    //슬라이드 시작하는 함수
     function startSlides() {
       intervalId = setInterval(showNextSlide, 2000);
     }
 
+    //슬라이드 멈추는  함수
     function stopSlides() {
       clearInterval(intervalId);
     }
@@ -258,6 +790,57 @@
     
     // 초기 슬라이드 보이기
     slides[0].classList.add('active');
+    linkButtons[0].classList.add('active');
+
+    // 버튼 누를 시 이미지 이동
+    linkButtons.forEach(button => {
+      button.addEventListener('click', slideButton);
+    });
+
+    ////////////////////////////////////////////////////////////////////////////
+    ///////////////////////////// best-list-slide ///////////////////////////////
+    let bLSIndex = 0;
+    let bLSintervalId;
+    const bLSlides = document.querySelectorAll('.best-items');
+    const bLLinks = document.querySelectorAll('.best-list a');
+  
+    // 슬라이드 투명도 적용 함수
+    function bLSShowNextSlide() {
+      bLSlides[bLSIndex].classList.remove('active');
+      bLSIndex = (bLSIndex + 1) % bLSlides.length;
+      bLSlides[bLSIndex].classList.add('active');
+    }
+  
+    // 슬라이드 시작하는 함수
+    function startBLSlides() {
+      bLSintervalId = setInterval(bLSShowNextSlide, 2000);
+    }
+  
+    // 슬라이드 멈추는 함수
+    function stopBLSlides() {
+      clearInterval(bLSintervalId);
+    }
+    
+    // 마우스를 링크에 올릴 때 슬라이드 보이기
+    bLLinks.forEach(link => {
+      link.addEventListener('mouseover', function() {
+        bLSlides.forEach(slide => slide.classList.remove('active'));
+        const targetIndex = link.getAttribute('data-target');
+        bLSlides[targetIndex].classList.add('active');
+        stopBLSlides(); // 슬라이드 쇼를 멈춤
+        isMouseOver = true; // 마우스가 올려진 상태로 설정
+      });
+  
+      link.addEventListener('mouseout', function() {
+        isMouseOver = false; // 마우스가 벗어난 상태로 설정
+        bLSIndex = parseInt(link.getAttribute('data-target')); // 현재 슬라이드 인덱스 설정
+        startBLSlides(); // 슬라이드 쇼를 다시 시작
+      });
+    });
+  
+    // 슬라이드 쇼 시작
+    startBLSlides();
+
   </script>
 </body>
 </html>
