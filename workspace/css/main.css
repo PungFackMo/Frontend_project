@@ -1,0 +1,181 @@
+    /*////////////////////////////////////////////// 전체 ///////////////////////////////////////////////*/
+      hr{
+        background: rgba(175, 175, 175, 0.5);
+        height: 1px;
+        border: 0;
+      }
+      body{
+        font-size: 12px;
+        background-color: white;
+      }
+      li{
+        list-style: none;
+      }
+      a{
+        text-decoration-line: none;
+      }
+      a:link{
+        color: black;
+      }
+      a:visited{
+        color: black;
+      }
+      /*///////////////////////////////////////////////////////////////////////////////////////////////////*/
+      /*////////////////////////////////////////////// 링크 ///////////////////////////////////////////////*/
+      .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .link-img {
+        width: 11px;
+        padding-left: 5px;
+        padding-right: 5px;
+      }
+      #link-span {
+        padding-left: 10px;
+      }
+      .link a{
+        text-decoration: none;
+        margin-right: 10px;
+      }
+      .list {
+        list-style-type: none;
+        display: inline-block;
+        position: relative;
+      }
+      .list-on {
+        display: none;
+        width: 300px;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background: white;
+        padding: 10px;
+      }
+      .link-submenu {
+        display: inline-block;
+      }
+      .link-submenu ul {
+        padding-left: 5px;
+      }
+      .menulist{
+        margin: 0 auto;
+        padding: 0;
+      }
+      .menulist-border {
+        border: 1px solid rgb(204, 204, 204);
+        border-radius: 5px;
+      }
+      .menulist01-border{
+        border-color: #f0f0f08c;
+        border-radius: 5px;
+        margin: 0 auto;
+      }
+      .menulist01-border a{
+        border: 1px solid #a3a3a3;
+        background-color: #e4e4e4;
+        padding-left: 10px;
+        padding-right: 10px;
+        padding-top: 3px;
+        padding-bottom: 3px;
+        border-radius: 5px;
+        margin: 0 auto;
+      }
+      .user-link {
+        display: flex;
+        align-items: center;
+      }
+      .user-link a {
+        text-decoration: none;
+        margin-right: 10px;
+        margin-left: 10px;
+      }
+      /*///////////////////////////////////////////////////////////////////////////////////////////////////*/
+      /*////////////////////////////////////////////// 배너 ///////////////////////////////////////////////*/
+      .banner-img{
+        text-align: center;
+      }
+      /*///////////////////////////////////////////////////////////////////////////////////////////////////*/
+      /*//////////////////////////////////////////// 카데고리 /////////////////////////////////////////////*/
+      .category-bar{
+        text-align: center;
+        display: block;
+        position: sticky;
+        top: 0;
+        left: 0;
+        right: 0;
+        border-top: 1px solid #e4e4e4;
+        border-bottom: 1px solid #e4e4e4;
+        padding-top: 15px;
+        padding-bottom: 15px;
+        background-color: rgba(255, 255, 255, 0.9);
+        z-index: 3;
+      }
+      #bar-list{
+        width: 1350px;
+      }
+      .category-bar ul{
+        margin: 0 auto;
+        padding: 0;
+      }
+      .category-bar li{
+        display: inline;
+        padding: 0;
+        margin: 15px;
+        padding: 0;
+      }
+      .category-bar a{
+        text-decoration: none;
+        padding-top: 15px;
+        padding-bottom: 15px;
+      }
+      .cList{
+        position: relative;
+      }
+      .category-list{
+        position: absolute;
+        border: 1px solid rgba(230, 230, 230, 0.9);
+        background: rgba(255, 255, 255, 0.9);
+        margin-top: 15.5px;
+        top: 100%;
+        left: 0;
+        width: 160px;
+        padding: 10px;
+        z-index: 2;
+      }
+      .category-list li{
+        padding: 10px;
+      }
+      .category-list-arrow{
+        content: "";
+        position: absolute;
+        top: -10px;
+        left: 10px;
+        display: inline-block;
+        width: 0;
+        height: 0;
+        border-left: 8px solid transparent;
+        border-right: 8px solid transparent;
+        border-top: 10px solid rgba(230, 230, 230, 0.9);
+        transform: rotate(180deg);
+      }
+      /*///////////////////////////////////////////////////////////////////////////////////////////////////*/
+      /*//////////////////////////////////////////// footer /////////////////////////////////////////////*/
+      .customer{
+        text-align: left;
+        border-top: 2px solid black;
+        margin-top: 40px;
+      }
+      .customer-center{
+        margin-left: 200px;
+      }
+      .cus-header{
+        padding-top: 30px;
+      }
+      .customer-link img{
+        margin-top: 10px;
+        padding-left: 3px;
+        padding-right: 3px;
+        width: 20px;
+      }

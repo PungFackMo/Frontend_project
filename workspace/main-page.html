@@ -3,149 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Document</title>
+  <title>PET LOVER</title>
+  <link href="css/main.css" rel="stylesheet" type="text/css">
   <style>
     /* https://pethug.kr/index.html */
-    /*////////////////////////////////////////////// 전체 ///////////////////////////////////////////////*/
-    hr{
-      background: rgba(175, 175, 175, 0.5);
-      height: 1px;
-      border: 0;
-    }
-    body{
-      font-size: 12px;
-      background-color: white;
-    }
-    li{
-      list-style: none;
-    }
-    a{
-      text-decoration-line: none;
-    }
-    a:link{
-      color: black;
-    }
-    a:visited{
-      color: black;
-    }
-    /*///////////////////////////////////////////////////////////////////////////////////////////////////*/
-    /*////////////////////////////////////////////// 링크 ///////////////////////////////////////////////*/
-    .navbar {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    .link-img {
-      width: 11px;
-      padding-left: 5px;
-      padding-right: 5px;
-    }
-    #link-span {
-      padding-left: 10px;
-    }
-    .link a{
-      text-decoration: none;
-      margin-right: 10px;
-    }
-    .list {
-      list-style-type: none;
-      display: inline-block;
-      position: relative;
-    }
-    .list-on {
-      display: none;
-      width: 300px;
-      position: absolute;
-      top: 100%;
-      left: 0;
-      background: white;
-      padding: 10px;
-    }
-    .link-submenu {
-      display: inline-block;
-    }
-    .link-submenu ul {
-      padding-left: 5px;
-    }
-    .menulist-border {
-      border: 1px solid rgb(204, 204, 204);
-      border-radius: 5px;
-    }
-    .user-link {
-      display: flex;
-      align-items: center;
-    }
-    .user-link a {
-      text-decoration: none;
-      margin-right: 10px;
-      margin-left: 10px;
-    }
-    /*///////////////////////////////////////////////////////////////////////////////////////////////////*/
-    /*////////////////////////////////////////////// 배너 ///////////////////////////////////////////////*/
-    .banner-img{
-      text-align: center;
-    }
-    /*///////////////////////////////////////////////////////////////////////////////////////////////////*/
-    /*//////////////////////////////////////////// 카데고리 /////////////////////////////////////////////*/
-    .category-bar{
-      text-align: center;
-      display: block;
-      position: sticky;
-      top: 0;
-      left: 0;
-      right: 0;
-      border-top: 1px solid #e4e4e4;
-      border-bottom: 1px solid #e4e4e4;
-      padding-top: 15px;
-      padding-bottom: 15px;
-      background-color: rgba(255, 255, 255, 0.9);
-      z-index: 3;
-    }
-    .category-bar ul{
-      margin: 0;
-      padding: 0;
-    }
-    .category-bar li{
-      display: inline;
-      padding: 0;
-      margin: 15px;
-      padding: 0;
-    }
-    .category-bar a{
-      text-decoration: none;
-      padding-top: 15px;
-      padding-bottom: 15px;
-    }
-    .cList{
-      position: relative;
-    }
-    .category-list{
-      position: absolute;
-      border: 1px solid rgba(230, 230, 230, 0.9);
-      background: rgba(255, 255, 255, 0.9);
-      margin-top: 15.5px;
-      top: 100%;
-      left: 0;
-      width: 160px;
-      padding: 10px;
-      z-index: 2;
-    }
-    .category-list li{
-      padding: 10px;
-    }
-    .category-list-arrow{
-      content: "";
-      position: absolute;
-      top: -10px;
-      left: 10px;
-      display: inline-block;
-      width: 0;
-      height: 0;
-      border-left: 8px solid transparent;
-      border-right: 8px solid transparent;
-      border-top: 10px solid rgba(230, 230, 230, 0.9);
-      transform: rotate(180deg);
-    }
     /*///////////////////////////////////////////////////////////////////////////////////////////////////*/
     /*//////////////////////////////////////////// 슬라이더 /////////////////////////////////////////////*/
     .slider {
@@ -276,7 +137,6 @@
     .new-item{
       display: inline-block;
       text-align: center;
-      width: 1300px;
     }
     .new-item a{
       display: flex;
@@ -337,13 +197,13 @@
   <header>
     <nav class="navbar"> <!-- nav 태그 -->
       <div class="link"> <!-- 링크 -->
-        <a href="#" target="_blank"> <!-- 북마크 -->
+        <a href="link-bookmark.html" onclick="openNewWindowS(this.href); return false;"> <!-- 북마크 -->
           <span>
             <img src="img/home.PNG" class="link-img" alt="home" />BOOKMARK
           </span>
         </a>
         |
-        <a href="#" target="_blank"> <!-- 바로가기 아이콘 -->
+        <a href="link-addIcon.html" onclick="openNewWindowS(this.href); return false;"> <!-- 바로가기 아이콘 -->
           <span id="link-span">ADD ICON</span>
         </a>
         |
@@ -356,10 +216,10 @@
               </a>
               <div class="list-on menulist" id="menuList">
                 <form id="serchBartForm" action="#" method="get">
-                  <!-- <fieldset class="menulist01-border"> -->
+                  <fieldset class="menulist01-border">
                     <p>검색하실 내용을 입력하세요 :)</p>
-                    <input type="text" name="query" />
-                    <input type="submit" value="Search" />
+                    <input type="text" name="query">
+                    <a href="#" onclick="openNewWindowL(this.href); return false;">Search</a>
                   </fieldset>
                 </form>
               </div>
@@ -368,9 +228,9 @@
         </div>
       </div>
       <div class="user-link"> <!-- 유저페이지 -->
-        <a href="#">LOGIN</a> <!-- 로그인 -->
+        <a href="login.html">LOGIN</a> <!-- 로그인 -->
         |
-        <a href="#">JOIN</a> <!-- 회원가입 -->
+        <a href="join.html">JOIN</a> <!-- 회원가입 -->
         |
         <a href="#">MY PAGE</a> <!-- 회원페이지 -->
         |
@@ -386,7 +246,7 @@
       </a>
     </h1>
     <div class="category-bar"> <!-- 카테고리 메뉴 -->
-      <ul>
+      <ul id="bar-list">
         <li>  <!-- 사료 -->
           <a href="#">사료</a>
         </li>
@@ -1078,6 +938,14 @@
 
 
   <script>
+    ///////////////////////////// 새로운 창에서 열기 /////////////////////////////
+    function openNewWindowS(url){
+      window.open(url, '_blank', 'width=450, height=450');
+    }
+    function openNewWindowL(url){
+      window.open(url, '_blank');
+    }
+    ////////////////////////////////////////////////////////////////////////////
     ///////////////////////////// 마우스 on/off 01 /////////////////////////////
 
     //마우스가 위에 있을 시 메뉴 보이게 하기
