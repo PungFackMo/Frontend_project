@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    fieldset{
+      margin-top: 30px;
+    }
+    legend{
+      font-weight: bolder;
+    }
+    .div-group{
+      display: flex;
+      padding-left: 50px;
+      margin: 10px auto;
+    }
+    .div-group label{
+      font-weight: bold;
+      color: green;
+      min-width: 150px;
+      text-align: right;
+    }
+    .div-group input{
+      margin-left: 10px;
+    }
+    .div-group select{
+      margin-left: 10px;
+    }
+    input[name|="book"]{
+      width: 100px;
+    }
+
+  </style>
+</head>
+<body>
+  <h1>여름방학 특강 신청</h1>
+  <form>
+    <fieldset>
+      <legend>수강과목</legend>
+      <div class="div-group">
+        <label for="time">영어회화(초급)</label>
+        <input type="text" name="time" value="오전 9:00~11:00" readonly>
+      </div>
+    </fieldset>
+    <fieldset>
+      <legend>신청자</legend>
+      <div class="div-group">
+        <label for="name">이름</label>
+        <input type="text" name="name">
+      </div>
+      <div class="div-group">
+        <label for="index">학번</label>
+        <input type="text" name="index" placeholder="하이폰없이 입력">
+      </div>
+      <div class="div-group">
+        <label for="subject">과목</label>
+        <select name="subject">
+          <option>컴퓨터공학과</option>
+        </select>
+      </div>
+    </fieldset>
+    <fieldset>
+      <legend>교재 주문</legend>
+      <div class="div-group">
+        <label for="book">교재</label>
+        <input type="number" name="book" value="1">
+      </div>
+      <div class="div-group">
+        <label for="bookseet">워크시트</label>
+        <input type="number" name="book-seet" value="1">
+      </div>
+      <div class="div-group">
+        <label for="orders">단체주문</label>
+        <input type="number" name="orders" value="10">
+      </div>
+    </fieldset>
+    <fieldset>
+      <input type="submit" value="신청하기"><input type="reset" value="다시쓰기">
+    </fieldset>
+  </form>
+
+  <script>
+    
+  </script>
+</body>
+</html>

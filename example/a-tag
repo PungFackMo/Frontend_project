@@ -1,0 +1,92 @@
+h1~h6 : 제목
+p, span 글
+pre : 그대로
+mark : 글에 마크
+em, i : 이텔릭체
+q : 인용내용 ex) <q>인용내용</q> => "인용내용"
+blockquote : 인용문 넣기
+br : 줄바꾸기
+hr : 수평 줄 넣기
+&nbsp; : 공백
+small : 글 작게
+sub : 아래 첨자 ex) H2O
+sup : 위 첨자 ex)10의 제곱
+s : 취소선
+u : 밑줄
+ul, li : 순서 없는 목록
+
+ol, li : 순서 있는 목록
+<p>
+  속성 : 
+  type="1, a, A, i, I" - ~로 시작
+  start"2" - 2로 시작
+  reversed : 반대로 시작
+</p>
+
+<dl>
+  <dt>제목</dt>
+  <dd>설명</dd>
+</dl>
+
+<table>
+  <caption>
+    제목
+  </caption>
+  <tr>
+    <th>제목</th>
+    <td>내용1</td>
+    <td>내용2</td>
+  </tr>
+  <tr>
+    <td colspan="2">가로로 2셀 합성</td>
+    <td rowspan="2">세로로 2셀 합성</td>
+  </tr>
+</table>
+
+img : 이미지 불러오기
+a : 링크 만들기 (href)
+
+form 태그 : 
+◆ 속성    /   설명
+▶ method  /   속성값 : get, post 
+  → get - 주소 표시줄에 사용자가 입력한 내용이 그대로 드러납니다.
+  → post - 사용자가 입력한 내용이 드러나지 않습니다.
+▶ name    /    폼의 이름을 지정합니다. 
+  한 문서 안에 여러 개의 <form> 태그가 있을 경우,  폼들을 구분하기 위해 사용합니다.
+▶ action    /   처리해 줄 서버 상의 프로그램을 지정<주소>합니다.
+▶ target    /   지정한 스크립트 파일을 현재 창이 아닌 다른 위치에 열도록 지정합니다.
+※ action="/login"→controller.java→method 처리
+autocomplete / on, off 자동 완성 기능을 켜고 끄는 속성, 기본값은 on
+
+<label> 태그 - 폼 요소에 레이블 붙이기
+  ◆ 입력 창 앞에 이름을 붙여 놓은 텍스트를 말합니다.
+
+<fieldset>, <legend> 태그 - 폼 요소 그룹으로 묶기
+<fieldset> - 테두리 추가
+<legend> - 테두리를  추가한 그룹에 제목을 붙여 줍니다.
+
+input 타입
+text, hidden, password, search, url, email, tel, number, range(슬라이드 막대),color, radio(name이 같으면 1개만 선택), checkbox, date, month, 
+week,time, datetime, datetime-local, submit(서버전송), reset(입력값지움),
+input 속성
+autofocus, placeholder, readonly, max, min, step(일정간격), size(길이), minlength(최소길이), maxlength
+
+select, option, optgroup: 여러 데이터 나열 - 드롭다운 목록
+select 속성 
+size, multiple, 
+option 속성
+value(선택했을 시 서버로 넘겨질 값), selected(기본선택옵션)
+ex) <optgroup label="text"></optgroup>
+
+textarea : 여러 줄 입력하는 텍스트 영역
+속성
+name, cols(가로너비문자), rows(세로너비문자)
+
+button : 버튼
+타입 : submit, reset, button
+
+progress : 진행상태 보여주기
+속성 : value, max
+
+meter : 값이 차지하는 크기 표시줄에
+속성 : min, max, value, low, high, optimum

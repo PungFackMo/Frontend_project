@@ -1,0 +1,53 @@
+:link 가상 클래스 선택자 - 방문하지 않은 링크에 스타일 적용 
+
+:visited 가상 클래스 선택자 - 방문한 링크에 스타일 적용 
+
+:hover 가상 클래스 선택자 - 웹 요소에 마우스 커서를 올려 놓을 때의 스타일 적용 
+
+:active 가상 클래스 선택자 - 웹 요소에 마우스를 누르고 있을 때 스타일 적용 
+
+:focus 가상 클래스 선택자 - 웹 요소에 초점이 맞추어졌을 때의 스타일 적용
+
+:nth-child(n)와 :nth-last-child(n) 가상 클래스 선택자 - 자식 요소의 위치에 따라 스타일 적용하기
+<!-- 
+  ◆ 테이블 행의 홀수 번째 자식요소에 스타일 적용 
+      table td{
+      border: 1px solid black;
+      border-collapse: collapse;
+    }
+    table tr:nth-child(2n+1){
+      background-color: darkgray;
+    }
+-->
+
+:first-child, :last-child 가상 클래스 선택자 - 첫 번째, 마지막 요소에 스타일 적용하기 
+<!-- 
+    table td:first-child{
+      border-top-left-radius: 5px;
+      border-bottom-left-radius: 5px;
+    }
+    table td:last-child{
+      border-top-right-radius: 5px;
+      border-bottom-right-radius: 5px;
+    }
+-->
+
+
+
+반응형 웹 사이트 만들기 
+▶ 가로, 세로 값 설정하는 속성 / 설명
+▶ min-width, min-height / 최소 너비, 최소 높이
+▶ max-width, max-height / 최대 너비, 최대 높이
+▶ width, height / 웹 페이지의 가로 너비, 세로 높이
+<!-- 
+      @media screen and (max-width:768px){
+      /* 화면 너비 768px이하 일 때 아래의 css를 적용 하겠다
+        태블릿 너비 기준이 768px
+        태블릿 세로 화면에서는 아래의 css 적용하겠다
+      */
+      body{
+        background-color: blue;
+      }
+    }
+-->
+
