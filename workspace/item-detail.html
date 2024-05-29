@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PET LOVER</title>
+  <link href="css/main.css" rel="stylesheet" type="text/css">
+  <style>
+    .item{
+      display: flex;
+      align-items: flex-start;
+      margin-top: 200px;
+    }
+    #item-img{
+      flex: 0 0 auto;
+      padding: 20px;
+      margin-left: 450px;
+    }
+    #item-img img{
+      width: 300px;
+    }
+    #item-pay{
+      flex: 1;
+      text-align: left;
+      margin-left: 200px;
+      max-width: 500px;
+      
+    }
+    .item-border{
+      padding: 10px;
+      border: 1px solid black;
+    }
+    #price{
+      font-weight: bolder;
+    }
+    .item-line{
+      display: flex;
+      margin: 10px auto;
+    }
+    .item-line label{
+      min-width: 120px;
+      text-align: left;
+    }
+    .item-line input{
+      border: 0;
+      width: 60px;
+      min-width: auto;
+    }
+    .price{
+      width: auto;
+      min-width: 50px;
+      outline: none;
+      text-align: left;
+    }
+    #price{
+      font-weight: bold;
+    }
+    .item-cnt{
+      width: 30px;
+    }
+    #detail-info{
+
+    }
+    #guide{
+
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav class="navbar"> <!-- nav 태그 -->
+      <div class="link"> <!-- 링크 -->
+        <a href="link-bookmark.html" onclick="openNewWindowS(this.href); return false;"> <!-- 북마크 -->
+          <span>
+            <img src="img/home.PNG" class="link-img" alt="home" />BOOKMARK
+          </span>
+        </a>
+        |
+        <a href="link-addIcon.html" onclick="openNewWindowS(this.href); return false;"> <!-- 바로가기 아이콘 -->
+          <span id="link-span">ADD ICON</span>
+        </a>
+        |
+        <div class="link-submenu"> <!-- 검색 -->
+          <ul>
+            <li class="list" onmouseover="showMenu()" onmouseout="hideMenu()">
+              <a href="#">
+                <img src="img/serch.png" class="link-img" alt="search" />
+                SEARCH
+              </a>
+              <div class="list-on menulist" id="menuList">
+                <form id="serchBartForm" action="#" method="get">
+                  <fieldset class="menulist01-border">
+                    <p>검색하실 내용을 입력하세요 :)</p>
+                    <input type="text" name="query">
+                    <a href="#" onclick="openNewWindowL(this.href); return false;">Search</a>
+                  </fieldset>
+                </form>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="user-link"> <!-- 유저페이지 -->
+        <a href="login.html">LOGIN</a> <!-- 로그인 -->
+        |
+        <a href="join.html">JOIN</a> <!-- 회원가입 -->
+        |
+        <a href="#">MY PAGE</a> <!-- 회원페이지 -->
+        |
+        <a href="#">CART</a> <!-- 장바구니 -->
+        |
+        <a href="#">ORDER</a> <!-- 주문내역 -->
+      </div>
+    </nav>
+    <hr>
+    <h1 class="banner-img"> <!-- 배너이미지 -->
+      <a href="main-page.html">
+        <img src="img/banner-image.PNG" alt="banner image">
+      </a>
+    </h1>
+    <div class="category-bar"> <!-- 카테고리 메뉴 -->
+      <ul>
+        <li>  <!-- 사료 -->
+          <a href="#">사료</a>
+        </li>
+        <li class="cList">  <!-- 간식 -->
+          <a href="#">간식</a>
+          <div class="category-list" style="display: none;">
+            <ul>
+              <div class="category-list-arrow"></div>
+              <li>
+                <a href="#">껌</a>
+              </li>
+              <hr>
+              <li>
+                <a href="#">캔/통조림</a>
+              </li>
+              <hr>
+              <li>
+                <a href="#">육포사사미(대용량)</a>
+              </li>
+              <hr>
+              <li>
+                <a href="#">육포사사미(소용량)</a>
+              </li>
+              <hr>
+              <li>
+                <a href="#">소세지/습식간식</a>
+              </li>
+            </ul>
+          </div>
+        </li>
+        <li class="cList">  <!-- 목욕용품 -->
+          <a href="#">목욕용품</a>
+          <div class="category-list" style="display: none;">
+            <ul>
+              <div class="category-list-arrow"></div>
+              <li>
+                <a href="#">타올/기타</a>
+              </li>
+              <hr>
+              <li>
+                <a href="#">약용샴푸</a>
+              </li>
+              <hr>
+              <li>
+                <a href="#">샴푸린스겸용</a>
+              </li>
+              <hr>
+              <li>
+                <a href="#">린스</a>
+              </li>
+              <hr>
+              <li>
+                <a href="#">샴푸</a>
+              </li>
+            </ul>
+          </div>
+        </li>
+        <li class="cList">  <!-- 영양제/의약외품/치아관리 -->
+          <a href="#">영양제/의약외품/치아관리</a>
+          <div class="category-list" style="display: none;">
+            <ul>
+              <div class="category-list-arrow"></div>
+              <li>
+                <a href="#">종합영양제</a>
+              </li>
+            </ul>
+          </div>
+        </li>
+        <li class="cList">  <!-- 위생/배변/패드 -->
+          <a href="#">위생/배변/패드</a>
+          <div class="category-list" style="display: none;">
+            <ul>
+              <div class="category-list-arrow"></div>
+              <li>
+                <a href="#">배변판/패드</a>
+              </li>
+              <hr>
+              <li>
+                <a href="#">기저귀/팬티</a>
+              </li>
+            </ul>
+          </div>
+        </li>
+        <li>  <!-- 이동용품/애견줄/하우스 -->
+          <a href="#">이동용품/애견줄/하우스</a>
+        </li>
+        <li>  <!-- 안전문/철장 -->
+          <a href="#">안전문/철장</a>
+        </li>
+        <li>  <!-- 장난감/훈련용품 -->
+          <a href="#">장난감/훈련용품</a>
+        </li>
+        <li class="cList">  <!-- 급식기/급수기 -->
+          <a href="#">급식기/급수기</a>
+          <div class="category-list" style="display: none;">
+            <ul>
+              <div class="category-list-arrow"></div>
+              <li>
+                <a href="#">급식기/급수기</a>
+              </li>
+              <hr>
+              <li>
+                <a href="#">쌍식기</a>
+              </li>
+              <hr>
+              <li>
+                <a href="#">사료 보관통</a>
+              </li>
+            </ul>
+          </div>
+        </li>
+        <li>  <!-- 고양이 사료 -->
+          <a href="#">고양이 사료</a>
+        </li>
+        <li class="cList">  <!-- 고양이 간식 -->
+          <a href="#">고양이 간식</a>
+          <div class="category-list" style="display: none;">
+            <ul>
+              <div class="category-list-arrow"></div>
+              <li>
+                <a href="#">간식캔</a>
+              </li>
+              <hr>
+              <li>
+                <a href="#">파우치</a>
+              </li>
+              <hr>
+              <li>
+                <a href="#">져키/동결건조</a>
+              </li>
+              <hr>
+              <li>
+                <a href="#">스낵&드롭스</a>
+              </li>
+              <hr>
+              <li>
+                <a href="#">통살&닭가슴살</a>
+              </li>
+            </ul>
+          </div>
+        </li>
+        <li class="cList">  <!-- 모래/화장실/식시 -->
+          <a href="#">모래/화장실/식시</a>
+          <div class="category-list" style="display: none;">
+            <ul>
+              <div class="category-list-arrow"></div>
+              <li>
+                <a href="#">모래</a>
+              </li>
+              <hr>
+              <li>
+                <a href="#">화장실</a>
+              </li>
+              <hr>
+              <li>
+                <a href="#">급식기/급수기</a>
+              </li>
+              <hr>
+              <li>
+                <a href="#">쌍식기</a>
+              </li>
+            </ul>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </header>
+  <main>
+    <div class="item">
+      <div id="item-img">
+        <img src="img/best-feed01.png">
+      </div>
+      <div id="item-pay">
+        <div class="item-border">
+          <h2 class="name">
+            데이스포 초유분유 200g
+          </h2>
+        </div>
+        <div class="item-border">
+          <div class="item-line">
+            <label id="price">
+              판매가
+            </label>
+            <input type="text" class="price" value="15,000 원" readonly>
+          </div>
+          <div class="item-line">
+            <label id="delivery">
+              국내·해외배송
+            </label>
+            <input type="text" class="delivery" value="국내배송" readonly>
+          </div>
+          <div class="item-line">
+            <label id="delivery-price">
+              배송비
+            </label>
+            <input type="text" class="delivery-price" value="2,500 원" readonly>
+          </div>
+        </div>
+        <div class="item-border">
+          <span>
+            (최소주문수량 1개 이상)
+          </span>
+          <br>
+          <br>
+          <span id="item-cnt">
+            수량을 선택해주세요.
+          </span>
+        </div>
+        <div class="item-border">
+          <span class="name">
+            데이스포 초유분유 200g
+          </span>
+          <input type="number" class="item-cnt" minlength="1" value="1">10,500원
+        </div>
+        <div class="item-border">
+          <span class="total-price">
+            총 상품금액(수량) : 10,500원 (1개)
+          </span>
+        </div>
+        
+      </div?>
+      <div id="detail-info">
+  
+      </div>
+      <div id="guide">
+  
+      </div>
+    </div>
+  </main>
+  <footer>
+    <div class="customer">
+      <div class="customer-center">
+        <div class="cus-header">
+          <h2>CUSTOMER CENTER</h2>
+        </div>
+        <div class="cus-content">
+          <p>010-1234-5678</p>
+          <span>운영시간 | 09:00~17:00 / 점심시간 | 12:00~13:00 / 주말, 공휴일은 휴무<br>
+            계좌안내. xxx xxxx xxxx xx 농협 | 예금주 : 자바스크립트</span>
+        </div>
+        <div class="customer-link">
+          <a href="https://www.facebook.com/"><img src="img/customer-link01.png"></a>
+          <a href="https://x.com/"><img src="img/customer-link02.png"></a>
+          <a href="https://www.instagram.com/"><img src="img/customer-link03.png"></a>
+          <a href="https://www.pinterest.co.kr/"><img src="img/customer-link04.png"></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+  <script>
+    ////////////////////////////////// 제품상세 ///////////////////////////////////
+    const items=[]
+
+    items.push(
+      {name:"데이스포 초유분유 200g", price:"10,500", img:"img/best-feed01.png", itemDetail:"img/01.png"}
+    )
+    items.push(
+      {name:"도기프랜드 클라쎄밀 분유 180g", price:"6,750", img:"img/best-feed02.png", itemDetail:"img/02.png"}
+    )
+    items.push(
+      {name:"디럭스락 분유 200g", price:"8,250", img:"img/best-feed03.png", itemDetail:"img/03.png"}
+    )
+    items.push(
+      {name:"뉴트리나 퍼피 2.1kg", price:"12,500", img:"img/best-feed04.png", itemDetail:"img/04.png"}
+    )
+    items.push(
+      {name:"뉴트리나 어덜트 연어 2.1kg", price:"12,500", img:"img/best-feed05.png", itemDetail:"img/05.png"}
+    )
+    items.push(
+      {name:"뉴트리나 다이어트 2.1kg", price:"12,500", img:"img/best-snack01.png", itemDetail:"img/06.png"}
+    )
+    items.push(
+      {name:"CP 클래식 독 어덜트 소고기 2kg", price:"9,000", img:"img/best-snack02.png", itemDetail:"img/07.png"}
+    )
+    items.push(
+      {name:"CP 클래식 독 어덜트 닭고기 2kg", price:"9,000", img:"img/best-snack03.png", itemDetail:"img/08.png"}
+    )
+    items.push(
+      {name:"CP 클래식 독 어덜트 양고기 2kg", price:"9,000", img:"img/best-snack04.png", itemDetail:"img/09.png"}
+    )
+    items.push(
+      {name:"CP 클래식 퍼피 밀크 2kg", price:"9,000", img:"img/best-snack05.png", itemDetail:"img/10.png"}
+    )
+    items.push(
+      {name:"CP 클래식 어덜트 스몰 브리드 소고기 2kg", price:"9,000", img:"img/best-bath01.png", itemDetail:"img/11.png"}
+    )
+    items.push(
+      {name:"소프트플러스 참좋은 황태사료 연어 1kg", price:"12,600", img:"img/best-bath02.png", itemDetail:"img/12.png"}
+    )
+    items.push(
+      {name:"소프트플러스 참좋은 황태사료 오리 1kg", price:"12,600", img:"img/best-bath03.png", itemDetail:"img/13.png"}
+    )
+    items.push(
+      {name:"아침애 수제사료 한우 2.4kg", price:"44,000", img:"img/best-bath04.png", itemDetail:"img/14.png"}
+    )
+    items.push(
+      {name:"아침애 수제사료 오리 감자 연어 3kg", price:"44,000", img:"img/best-bath05.png", itemDetail:"img/15.png"}
+    )
+    items.push(
+      {name:"아침애 수제사료 오리 연어 감자 1kg", price:"15,400", img:"img/best-md01.png", itemDetail:"img/16.png"}
+    )
+    items.push(
+      {name:"아침애 수제사료 피부 개선 3kg", price:"44,000", img:"img/best-md02.png", itemDetail:"img/17.png"}
+    )
+    items.push(
+      {name:"아침애 수제사료 다이어트 1kg", price:"15,400", img:"img/best-md03.png", itemDetail:"img/18.png"}
+    )
+    items.push(
+      {name:"아침애 수제사료 한우 800g", price:"15,400", img:"img/best-md04.png", itemDetail:"img/19.png"}
+    )
+
+    ////////////////////////////////////////////////////////////////////////////
+    ///////////////////////////// 새로운 창에서 열기 /////////////////////////////
+    function openNewWindowS(url){
+      window.open(url, '_blank', 'width=450, height=450');
+    }
+    function openNewWindowL(url){
+      window.open(url, '_blank');
+    }
+    ////////////////////////////////////////////////////////////////////////////
+    ///////////////////////////// 마우스 on/off 01 /////////////////////////////
+
+    //마우스가 위에 있을 시 메뉴 보이게 하기
+    function showMenu() {
+      document.getElementById("menuList").style.display = "block";
+    }
+    //마우스가 위에 없을 시 메뉴 숨기기
+    function hideMenu() {
+      document.getElementById("menuList").style.display = "none";
+    }
+    ////////////////////////////////////////////////////////////////////////////
+    ///////////////////////////// 마우스 on/off 02 /////////////////////////////
+
+    //마우스가 위에 있을 시 리스트 보이게 하는 함수
+    function showList() {
+      const showCategory=this.querySelector(".category-list");
+      showCategory.style.display="block";
+    }
+    //마우스가 위에 없을 시 리스트 숨기는 함수
+    function hideList() {
+      const hideCategory=this.querySelector(".category-list");
+      hideCategory.style.display="none";
+    }
+    //이벤트 리스너를 각 cList 항목에 추가
+    document.querySelectorAll(".cList",).forEach(item=>{
+      item.addEventListener("mouseover",showList)
+      item.addEventListener("mouseout",hideList)
+    })
+
+  </script>
+</body>
+</html>
