@@ -322,31 +322,31 @@
               아이디 <sapn class="star">*</sapn>
             </th>
             <td>
-              <input type="text" minlength="4" maxlength="16" name="id"> 아이디를 입력해 주세요.<small>(영문소문자/숫자,4~16자)</small>
+              <input type="text" minlength="4" maxlength="16" name="id" id="user-id"> 아이디를 입력해 주세요.<small>(영문소문자/숫자,4~16자)</small>
             </td>
           </tr>
           <tr class="jc-pw">
             <th>비밀번호 <sapn class="star">*</sapn></th>
             <td>
-              <input type="password" minlength="10" maxlength="16" name="pw"> 비밀번호를 입력해 주세요.<small>(영문 대소문자/숫자/특수문자 중 2가지 이상 조합,4~16자)</small>
+              <input type="password" minlength="10" maxlength="16" name="pw" id="user-pw"> 비밀번호를 입력해 주세요.<small>(영문 대소문자/숫자/특수문자 중 2가지 이상 조합,4~16자)</small>
             </td>
           </tr>
           <tr class="jc-pw-ch">
             <th>비밀번호 확인 <sapn class="star">*</sapn></th>
             <td>
-              <input type="password" minlength="10" maxlength="16" name="pw-ch">
+              <input type="password" minlength="10" maxlength="16" name="pw-ch"  id="user-pw-ch">
             </td>
           </tr>
           <tr class="jc-name">
             <th>이름 <sapn class="star">*</sapn></th>
             <td>
-              <input type="text" name="name">
+              <input type="text" name="name" id="user-name">
             </td>
           </tr>
           <tr class="jc-tel">
             <th>휴대전화</th>
             <td>
-              <select>
+              <select id="user-telFront">
                 <option>010</option>
                 <option>011</option>
                 <option>016</option>
@@ -355,15 +355,15 @@
                 <option>019</option>
               </select>
               -
-              <input type="text" maxlength="4">
+              <input type="text" maxlength="4" id="user-telMiddel">
               -
-              <input type="text" maxlength="4">
+              <input type="text" maxlength="4" id="user-telFinal">
             </td>
           </tr>
           <tr class="jc-email">
             <th>이메일 <sapn class="star">*</sapn></th>
             <td>
-              <input type="email"name="email">
+              <input type="email"name="email" id="user-email">
             </td>
           </tr>
         </div>
@@ -671,7 +671,7 @@
         <span>이메일 수신을 동의하십니까?</span> <input type="checkbox" class="checkbox"> 동의함
       </div>
       <div class="join-button">
-        <a href="main-page.html" type="submit" id="join-button">회원가입</a>
+        <a href="#" type="submit" id="join-button">회원가입</a>
       </div>
     </form>
   </div>
@@ -701,11 +701,81 @@
     ////////////////////////////////// 회원가입 ///////////////////////////////////
     const allCheck = document.querySelector("#all-check");
     const checkboxes = document.querySelectorAll(".checkbox");
+    const addButton = document.querySelector("#join-button");
+    const userDB=[];
+    userDB.push(
+      {userID:"001", id:"admin" , pw:"admin", name:"여정모", telFront:"010", telMiddle:"1234", telFinal:"1234", email:"duwjdah2001@gmail.com"}
+    )
 
     allCheck.addEventListener("change", () => {
       checkboxes.forEach(checkbox => {
         checkbox.checked = allCheck.checked;
       });
+    });
+
+    addButton.addEventListener("click", () => {
+      const ID=document.getElementById("user-id");
+      const PW=document.getElementById("user-pw");
+      const PWCh=document.getElementById("user-pw-ch");
+      const name=document.getElementById("user-name");
+      const telFront=document.getElementById("user-telFront");
+      const telMiddel=document.getElementById("user-telMiddel");
+      const telFinal=document.getElementById("user-telFinal");
+      const email=document.getElementById("user-email");
+
+      //회원가입 input 조건
+      if(ID.value.trim() === ""){
+        alert("아이디를 입력하세요");
+        return;
+      }
+      if(PW.value.trim() === ""){
+        alert("비밀번호를 입력하세요");
+        return;
+      }
+      if(PW.value!==PWCh.value){
+        alert("비밀번호가 다릅니다.");
+        return;
+      }
+      if(PWCh.value.trim() === ""){
+        alert("비밀번호확인을 입력하세요");
+        return;
+      }
+      if(name.value.trim() === ""){
+        alert("이름을 입력하세요");
+        return;
+      }
+      if(email.value.trim() === ""){
+        alert("이메일을 입력하세요");
+        return;
+      }else if(!email.value.trim().includes("@")){
+        alert("이메일에 @가 포함되어 있지 않습니다.\n이메일 형식에 맞게 입력해주세요.")
+        return;
+      }else if(!email.value.trim().includes(".")){
+        alert("이메일에 .이 포함되어 있지 않습니다.\n이메일 형식에 맞게 입력해주세요.")
+        return;
+      }else if(email.value.trim().split("@")[0].length<1){
+        alert("이메일 형식에 맞게 입력해주세요.")
+        return;
+      }else if(email.value.trim().split("@")[1].split(".")[0].length<1){
+        alert("이메일 형식에 맞게 입력해주세요.")
+        return;
+      }
+
+      //회원가입 시 user정보 userdb에 추가
+      let IDIndex=1;
+      while(true){
+        const paddedIDIndex = IDIndex.toString().padStart(3, '0');
+        if(userDB.some(user => user.userID === paddedIDIndex)){
+          IDIndex++
+        }else{
+          userDB.push(
+          {userID:paddedIDIndex.value, id:ID.value , pw:PW.value, name:name.value, telFront:telFront.value, telMiddle:telMiddel.value, telFinal:telFinal.value, email:email.value}
+        )
+        alert("회원가입이 완료되었습니다")
+        console.log(userDB)
+        break;
+        }
+      }
     });
     ////////////////////////////////////////////////////////////////////////////
     ///////////////////////////// 새로운 창에서 열기 /////////////////////////////
