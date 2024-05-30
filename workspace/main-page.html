@@ -42,13 +42,13 @@
     }
     .sButtons{
       position: absolute;
-      bottom: 101%;
+      bottom: 100%;
       width: 100%;
       z-index: 2;
     }
     .sButtons-item{
       display: inline-block;
-      vertical-align: bottom;
+      /* vertical-align: bottom; */
     }
     .link-button{
       background-color: #e4e4e4;
@@ -65,6 +65,9 @@
     }
     /*///////////////////////////////////////////////////////////////////////////////////////////////////*/
     /*//////////////////////////////////////////// content-m /////////////////////////////////////////////*/
+    .mainMenu div{
+      text-align: center;
+    }
     .main-banner ul{
       justify-content: center;
       display: flex;
@@ -194,7 +197,7 @@
   </style>
 </head>
 <body>
-  <header>
+  <div class="header">
     <nav class="navbar"> <!-- nav 태그 -->
       <div class="link"> <!-- 링크 -->
         <a href="link-bookmark.html" onclick="openNewWindowS(this.href); return false;"> <!-- 북마크 -->
@@ -248,173 +251,173 @@
     <div class="category-bar"> <!-- 카테고리 메뉴 -->
       <ul id="bar-list">
         <li>  <!-- 사료 -->
-          <a href="#">사료</a>
+          <a href="item-list.html?categoryID=01&bordID=01">사료</a>
         </li>
         <li class="cList">  <!-- 간식 -->
-          <a href="#">간식</a>
+          <a href="item-list.html?categoryID=02&bordID=01">간식</a>
           <div class="category-list" style="display: none;">
             <ul>
               <div class="category-list-arrow"></div>
               <li>
-                <a href="#">껌</a>
+                <a href="item-list.html?categoryID=02&bordID=01">껌</a>
               </li>
               <hr>
               <li>
-                <a href="#">캔/통조림</a>
+                <a href="item-list.html?categoryID=02&bordID=02">캔/통조림</a>
               </li>
               <hr>
               <li>
-                <a href="#">육포사사미(대용량)</a>
+                <a href="item-list.html?categoryID=02&bordID=03">육포사사미(대용량)</a>
               </li>
               <hr>
               <li>
-                <a href="#">육포사사미(소용량)</a>
+                <a href="item-list.html?categoryID=02&bordID=04">육포사사미(소용량)</a>
               </li>
               <hr>
               <li>
-                <a href="#">소세지/습식간식</a>
+                <a href="item-list.html?categoryID=02&bordID=05">소세지/습식간식</a>
               </li>
             </ul>
           </div>
         </li>
         <li class="cList">  <!-- 목욕용품 -->
-          <a href="#">목욕용품</a>
+          <a href="item-list.html?categoryID=03&bordID=01">목욕용품</a>
           <div class="category-list" style="display: none;">
             <ul>
               <div class="category-list-arrow"></div>
               <li>
-                <a href="#">타올/기타</a>
+                <a href="item-list.html?categoryID=03&bordID=01">타올/기타</a>
               </li>
               <hr>
               <li>
-                <a href="#">약용샴푸</a>
+                <a href="item-list.html?categoryID=03&bordID=02">약용샴푸</a>
               </li>
               <hr>
               <li>
-                <a href="#">샴푸린스겸용</a>
+                <a href="item-list.html?categoryID=03&bordID=03">샴푸린스겸용</a>
               </li>
               <hr>
               <li>
-                <a href="#">린스</a>
+                <a href="item-list.html?categoryID=03&bordID=04">린스</a>
               </li>
               <hr>
               <li>
-                <a href="#">샴푸</a>
+                <a href="item-list.html?categoryID=03&bordID=05">샴푸</a>
               </li>
             </ul>
           </div>
         </li>
         <li class="cList">  <!-- 영양제/의약외품/치아관리 -->
-          <a href="#">영양제/의약외품/치아관리</a>
+          <a href="item-list.html?categoryID=04&bordID=01">영양제/의약외품/치아관리</a>
           <div class="category-list" style="display: none;">
             <ul>
               <div class="category-list-arrow"></div>
               <li>
-                <a href="#">종합영양제</a>
+                <a href="item-list.html?categoryID=04&bordID=01">종합영양제</a>
               </li>
             </ul>
           </div>
         </li>
         <li class="cList">  <!-- 위생/배변/패드 -->
-          <a href="#">위생/배변/패드</a>
+          <a href="item-list.html?categoryID=05&bordID=01">위생/배변/패드</a>
           <div class="category-list" style="display: none;">
             <ul>
               <div class="category-list-arrow"></div>
               <li>
-                <a href="#">배변판/패드</a>
+                <a href="item-list.html?categoryID=05&bordID=01">배변판/패드</a>
               </li>
               <hr>
               <li>
-                <a href="#">기저귀/팬티</a>
+                <a href="item-list.html?categoryID=05&bordID=02">기저귀/팬티</a>
               </li>
             </ul>
           </div>
         </li>
         <li>  <!-- 이동용품/애견줄/하우스 -->
-          <a href="#">이동용품/애견줄/하우스</a>
+          <a href="item-list.html?categoryID=06&bordID=01">이동용품/애견줄/하우스</a>
         </li>
         <li>  <!-- 안전문/철장 -->
-          <a href="#">안전문/철장</a>
+          <a href="item-list.html?categoryID=07&bordID=01">안전문/철장</a>
         </li>
         <li>  <!-- 장난감/훈련용품 -->
-          <a href="#">장난감/훈련용품</a>
+          <a href="item-list.html?categoryID=08&bordID=01">장난감/훈련용품</a>
         </li>
         <li class="cList">  <!-- 급식기/급수기 -->
-          <a href="#">급식기/급수기</a>
+          <a href="item-list.html?categoryID=09&bordID=01">급식기/급수기</a>
           <div class="category-list" style="display: none;">
             <ul>
               <div class="category-list-arrow"></div>
               <li>
-                <a href="#">급식기/급수기</a>
+                <a href="item-list.html?categoryID=09&bordID=01">급식기/급수기</a>
               </li>
               <hr>
               <li>
-                <a href="#">쌍식기</a>
+                <a href="item-list.html?categoryID=09&bordID=02">쌍식기</a>
               </li>
               <hr>
               <li>
-                <a href="#">사료 보관통</a>
+                <a href="item-list.html?categoryID=09&bordID=03">사료 보관통</a>
               </li>
             </ul>
           </div>
         </li>
         <li>  <!-- 고양이 사료 -->
-          <a href="#">고양이 사료</a>
+          <a href="item-list.html?categoryID=10&bordID=01">고양이 사료</a>
         </li>
         <li class="cList">  <!-- 고양이 간식 -->
-          <a href="#">고양이 간식</a>
+          <a href="item-list.html?categoryID=11&bordID=01">고양이 간식</a>
           <div class="category-list" style="display: none;">
             <ul>
               <div class="category-list-arrow"></div>
               <li>
-                <a href="#">간식캔</a>
+                <a href="item-list.html?categoryID=11&bordID=01">간식캔</a>
               </li>
               <hr>
               <li>
-                <a href="#">파우치</a>
+                <a href="item-list.html?categoryID=11&bordID=02">파우치</a>
               </li>
               <hr>
               <li>
-                <a href="#">져키/동결건조</a>
+                <a href="item-list.html?categoryID=11&bordID=03">져키/동결건조</a>
               </li>
               <hr>
               <li>
-                <a href="#">스낵&드롭스</a>
+                <a href="item-list.html?categoryID=11&bordID=04">스낵&드롭스</a>
               </li>
               <hr>
               <li>
-                <a href="#">통살&닭가슴살</a>
+                <a href="item-list.html?categoryID=11&bordID=05">통살&닭가슴살</a>
               </li>
             </ul>
           </div>
         </li>
         <li class="cList">  <!-- 모래/화장실/식시 -->
-          <a href="#">모래/화장실/식시</a>
+          <a href="item-list.html?categoryID=12&bordID=01">모래/화장실/식시</a>
           <div class="category-list" style="display: none;">
             <ul>
               <div class="category-list-arrow"></div>
               <li>
-                <a href="#">모래</a>
+                <a href="item-list.html?categoryID=12&bordID=01">모래</a>
               </li>
               <hr>
               <li>
-                <a href="#">화장실</a>
+                <a href="item-list.html?categoryID=12&bordID=02">화장실</a>
               </li>
               <hr>
               <li>
-                <a href="#">급식기/급수기</a>
+                <a href="item-list.html?categoryID=12&bordID=03">급식기/급수기</a>
               </li>
               <hr>
               <li>
-                <a href="#">쌍식기</a>
+                <a href="item-list.html?categoryID=12&bordID=04">쌍식기</a>
               </li>
             </ul>
           </div>
         </li>
       </ul>
     </div>
-  </header>
-  <slider>
+  </div>
+  <div class="sliderMenu">
     <div class="slider" id="slider"> <!-- 슬라이더 메뉴 -->
       <div class="slides">
         <a href="#" class="slide"> <!-- 간식 -->
@@ -444,9 +447,10 @@
           <a href="#" class="link-button">3</a>
         </div>
       </div>
-  </slider>
+    </div>
+  </div>
   <hr>
-  <main>
+  <div class="mainMenu">
     <div class="content_m">
       <div class="main-banner">
         <ul>
@@ -456,12 +460,12 @@
             </a>
           </li>
           <li class="main-banner-list">
-            <a href="#">
+            <a href="item-list.html?categoryID=01&bordID=01">
               <img src="img/content02.png" alt="bestitem">
             </a>
           </li>
           <li class="main-banner-list">
-            <a href="#">
+            <a href="item-list.html?categoryID=01&bordID=01">
               <img src="img/content03.png" alt="gooditem">
             </a>
           </li>
@@ -478,50 +482,50 @@
       <div class="best-banner">
         <ul>
           <li class="best-list">
-            <a href="#" data-target="0">사료</a>
+            <a href="item-list.html?categoryID=01&bordID=01">사료</a>
           </li>
           |
           <li class="best-list">
-            <a href="#" data-target="1">간식</a>
+            <a href="item-list.html?categoryID=02&bordID=01">간식</a>
           </li>
           |
           <li class="best-list">
-            <a href="#" data-target="2">목욕/미용</a>
+            <a href="item-list.html?categoryID=03&bordID=01">목욕/미용</a>
           </li>
           |
           <li class="best-list">
-            <a href="#" data-target="3">영양제/의약외품/치아관리</a>
+            <a href="item-list.html?categoryID=04&bordID=01">영양제/의약외품/치아관리</a>
           </li>
         </ul>
         <div class="best-contents">
           <div class="best-items active"> <!-- 사료 -->
             <ul class="best-item">
               <li>
-                <a href="#" data-target="0">
+                <a href="item-detail.html?itemID=001">
                   <img src="img/best-feed01.png" alt="데이스포 초유분유 200g">
                   <span>데이스포 초유분유 200g</span>
                 </a>
               </li>
               <li>
-                <a href="#" data-target="1">
+                <a href="item-detail.html?itemID=002">
                   <img src="img/best-feed02.png" alt="도기프랜드 클라쎄밀 분유 180g">
                   <span>도기프랜드 클라쎄밀 분유 180g</span>
                 </a>
               </li>
               <li>
-                <a href="#" data-target="2">
+                <a href="item-detail.html?itemID=003">
                   <img src="img/best-feed03.png" alt="디럭스락 분유 200g">
                   <span>디럭스락 분유 200g</span>
                 </a>
               </li>
               <li>
-                <a href="#" data-target="3">
+                <a href="item-detail.html?itemID=004">
                   <img src="img/best-feed04.png" alt="뉴트리나 퍼피 2.1kg">
                   <span>뉴트리나 퍼피 2.1kg</span>
                 </a>
               </li>
               <li>
-                <a href="#" data-target="4">
+                <a href="item-detail.html?itemID=005">
                   <img src="img/best-feed05.png" alt="뉴트리나 어덜트 연어 2.1kg">
                   <span>뉴트리나 어덜트 연어 2.1kg</span>
                 </a>
@@ -531,31 +535,31 @@
           <div class="best-items"> <!-- 간식 -->
             <ul class="best-item">
               <li>
-                <a href="#" data-target="5">
+                <a href="item-detail.html?itemID=006">
                   <img src="img/best-snack01.png" alt="뉴트리나 다이어트 2.1kg">
                   <span>뉴트리나 다이어트 2.1kg</span>
                 </a>
               </li>
               <li>
-                <a href="#" data-target="6">
+                <a href="item-detail.html?itemID=007">
                   <img src="img/best-snack02.png" alt="CP 클래식 독 어덜트 소고기 2kg">
                   <span>CP 클래식 독 어덜트 소고기 2kg</span>
                 </a>
               </li>
               <li>
-                <a href="#" data-target="7">
+                <a href="item-detail.html?itemID=008">
                   <img src="img/best-snack03.png" alt="CP 클래식 독 어덜트 닭고기 2kg">
                   <span>CP 클래식 독 어덜트 닭고기 2kg</span>
                 </a>
               </li>
               <li>
-                <a href="#" data-target="8">
+                <a href="item-detail.html?itemID=009">
                   <img src="img/best-snack04.png" alt="CP 클래식 독 어덜트 양고기 2kg">
                   <span>CP 클래식 독 어덜트 양고기 2kg</span>
                 </a>
               </li>
               <li>
-                <a href="#" data-target="9">
+                <a href="item-detail.html?itemID=010">
                   <img src="img/best-snack05.png" alt="CP 클래식 퍼피 밀크 2kg">
                   <span>CP 클래식 퍼피 밀크 2kg</span>
                 </a>
@@ -565,31 +569,31 @@
           <div class="best-items"> <!-- 목욕/미용 -->
             <ul class="best-item">
               <li>
-                <a href="#" data-target="10">
+                <a href="item-detail.html?itemID=011">
                   <img src="img/best-bath01.png" alt="CP 클래식 어덜트 스몰 브리드 소고기 2kg">
                   <span>CP 클래식 어덜트 스몰 브리드 소고기 2kg</span>
                 </a>
               </li>
               <li>
-                <a href="#" data-target="11">
+                <a href="item-detail.html?itemID=012">
                   <img src="img/best-bath02.png" alt="소프트플러스 참좋은 황태사료 연어 1kg">
                   <span>소프트플러스 참좋은 황태사료 연어 1kg</span>
                 </a>
               </li>
               <li>
-                <a href="#" data-target="12">
+                <a href="item-detail.html?itemID=013">
                   <img src="img/best-bath03.png" alt="소프트플러스 참좋은 황태사료 오리 1kg">
                   <span>소프트플러스 참좋은 황태사료 오리 1kg</span>
                 </a>
               </li>
               <li>
-                <a href="#" data-target="13">
+                <a href="item-detail.html?itemID=014">
                   <img src="img/best-bath04.png" alt="아침애 수제사료 한우 2.4kg">
                   <span>아침애 수제사료 한우 2.4kg</span>
                 </a>
               </li>
               <li>
-                <a href="#" data-target="14">
+                <a href="item-detail.html?itemID=015">
                   <img src="img/best-bath05.png" alt="아침애 수제사료 오리 감자 연어 3kg">
                   <span>아침애 수제사료 오리 감자 연어 3kg</span>
                 </a>
@@ -599,31 +603,31 @@
           <div class="best-items"> <!-- 영양제/의약외품/치아관리 -->
             <ul class="best-item">
               <li>
-                <a href="#" data-target="15">
+                <a href="item-detail.html?itemID=016">
                   <img src="img/best-md01.png" alt="아침애 수제사료 오리 연어 감자 1kg">
                   <span>아침애 수제사료 오리 연어 감자 1kg</span>
                 </a>
               </li>
               <li>
-                <a href="#" data-target="16">
+                <a href="item-detail.html?itemID=017">
                   <img src="img/best-md02.png" alt="아침애 수제사료 피부 개선 3kg">
                   <span>아침애 수제사료 피부 개선 3kg</span>
                 </a>
               </li>
               <li>
-                <a href="#" data-target="17">
+                <a href="item-detail.html?itemID=018">
                   <img src="img/best-md03.png" alt="아침애 수제사료 다이어트 1kg">
                   <span>아침애 수제사료 다이어트 1kg</span>
                 </a>
               </li>
               <li>
-                <a href="#" data-target="18">
+                <a href="item-detail.html?itemID=019">
                   <img src="img/best-md04.png" alt="아침애 수제사료 한우 800g">
                   <span>아침애 수제사료 한우 800g</span>
                 </a>
               </li>
               <li>
-                <a href="#" data-target="18">
+                <a href="item-detail.html?itemID=019">
                   <img src="img/best-md04.png" alt="아침애 수제사료 한우 800g">
                   <span>아침애 수제사료 한우 800g</span>
                 </a>
@@ -640,25 +644,25 @@
             <table class="new-items">
               <tr class="new-item">
                 <td>
-                  <a href="#" data-target="0">
+                  <a href="item-detail.html?itemID=001">
                     <img src="img/best-feed01.png" alt="데이스포 초유분유 200g">
                     <span>데이스포 초유분유 200g</span>
                   </a>
                 </td>
                 <td>
-                  <a href="#" data-target="1">
+                  <a href="item-detail.html?itemID=002">
                     <img src="img/best-feed02.png" alt="도기프랜드 클라쎄밀 분유 180g">
                     <span>도기프랜드 클라쎄밀 분유 180g</span>
                   </a>
                 </td>
                 <td>
-                  <a href="#" data-target="2">
+                  <a href="item-detail.html?itemID=003">
                     <img src="img/best-feed03.png" alt="디럭스락 분유 200g">
                     <span>디럭스락 분유 200g</span>
                   </a>
                 </td>
                 <td>
-                  <a href="#" data-target="3">
+                  <a href="item-detail.html?itemID=004">
                     <img src="img/best-feed04.png" alt="뉴트리나 퍼피 2.1kg">
                     <span>뉴트리나 퍼피 2.1kg</span>
                   </a>
@@ -666,25 +670,25 @@
               </tr>
               <tr class="new-item">
                 <td>
-                  <a href="#" data-target="4">
+                  <a href="item-detail.html?itemID=005">
                     <img src="img/best-feed05.png" alt="뉴트리나 어덜트 연어 2.1kg">
                     <span>뉴트리나 어덜트 연어 2.1kg</span>
                   </a>
                 </td>
                 <td>
-                  <a href="#" data-target="5">
+                  <a href="item-detail.html?itemID=006">
                     <img src="img/best-snack01.png" alt="뉴트리나 다이어트 2.1kg">
                     <span>뉴트리나 다이어트 2.1kg</span>
                   </a>
                 </td>
                 <td>
-                  <a href="#" data-target="6">
+                  <a href="item-detail.html?itemID=007">
                     <img src="img/best-snack02.png" alt="CP 클래식 독 어덜트 소고기 2kg">
                     <span>CP 클래식 독 어덜트 소고기 2kg</span>
                   </a>
                 </td>
                 <td>
-                  <a href="#" data-target="7">
+                  <a href="item-detail.html?itemID=008">
                     <img src="img/best-snack03.png" alt="CP 클래식 독 어덜트 닭고기 2kg">
                     <span>CP 클래식 독 어덜트 닭고기 2kg</span>
                   </a>
@@ -692,25 +696,25 @@
               </tr>
               <tr class="new-item">
                 <td>
-                  <a href="#" data-target="8">
+                  <a href="item-detail.html?itemID=009">
                     <img src="img/best-snack04.png" alt="CP 클래식 독 어덜트 양고기 2kg">
                     <span>CP 클래식 독 어덜트 양고기 2kg</span>
                   </a>
                 </td>
                 <td>
-                  <a href="#" data-target="9">
+                  <a href="item-detail.html?itemID=010">
                     <img src="img/best-snack05.png" alt="CP 클래식 퍼피 밀크 2kg">
                     <span>CP 클래식 퍼피 밀크 2kg</span>
                   </a>
                 </td>
                 <td>
-                  <a href="#" data-target="10">
+                  <a href="item-detail.html?itemID=011">
                     <img src="img/best-bath01.png" alt="CP 클래식 어덜트 스몰 브리드 소고기 2kg">
                     <span>CP 클래식 어덜트 스몰 브리드 소고기 2kg</span>
                   </a>
                 </td>
                 <td>
-                  <a href="#" data-target="11">
+                  <a href="item-detail.html?itemID=012">
                     <img src="img/best-bath02.png" alt="소프트플러스 참좋은 황태사료 연어 1kg">
                     <span>소프트플러스 참좋은 황태사료 연어 1kg</span>
                   </a>
@@ -718,25 +722,25 @@
               </tr>
               <tr class="new-item">
                 <td>
-                  <a href="#" data-target="12">
+                  <a href="item-detail.html?itemID=013">
                     <img src="img/best-bath03.png" alt="소프트플러스 참좋은 황태사료 오리 1kg">
                     <span>소프트플러스 참좋은 황태사료 오리 1kg</span>
                   </a>
                 </td>
                 <td>
-                  <a href="#" data-target="13">
+                  <a href="item-detail.html?itemID=014">
                     <img src="img/best-bath04.png" alt="아침애 수제사료 한우 2.4kg">
                     <span>아침애 수제사료 한우 2.4kg</span>
                   </a>
                 </td>
                 <td>
-                  <a href="#" data-target="14">
+                  <a href="item-detail.html?itemID=015">
                     <img src="img/best-bath05.png" alt="아침애 수제사료 오리 감자 연어 3kg">
                     <span>아침애 수제사료 오리 감자 연어 3kg</span>
                   </a>
                 </td>
                 <td>
-                  <a href="#" data-target="15">
+                  <a href="item-detail.html?itemID=016">
                     <img src="img/best-md01.png" alt="아침애 수제사료 오리 연어 감자 1kg">
                     <span>아침애 수제사료 오리 연어 감자 1kg</span>
                   </a>
@@ -744,19 +748,19 @@
               </tr>
               <tr class="new-item">
                 <td>
-                  <a href="#" data-target="16">
+                  <a href="item-detail.html?itemID=017">
                     <img src="img/best-md02.png" alt="아침애 수제사료 피부 개선 3kg">
                     <span>아침애 수제사료 피부 개선 3kg</span>
                   </a>
                 </td>
                 <td>
-                  <a href="#" data-target="17">
+                  <a href="item-detail.html?itemID=018">
                     <img src="img/best-md03.png" alt="아침애 수제사료 다이어트 1kg">
                     <span>아침애 수제사료 다이어트 1kg</span>
                   </a>
                 </td>
                 <td>
-                  <a href="#" data-target="18">
+                  <a href="item-detail.html?itemID=019">
                     <img src="img/best-md04.png" alt="아침애 수제사료 한우 800g">
                     <span>아침애 수제사료 한우 800g</span>
                   </a>
@@ -910,7 +914,7 @@
           </div>
       </div>
     </div>
-  </main>
+  </div>
   <footer>
     <div class="customer">
       <div class="customer-center">
@@ -938,67 +942,6 @@
 
 
   <script>
-    const items=[]
-
-    items.push(
-      {name:"데이스포 초유분유 200g", price:"10,500", img:"img/best-feed01.png", itemDetail:"img/01.png"}
-    )
-    items.push(
-      {name:"도기프랜드 클라쎄밀 분유 180g", price:"6,750", img:"img/best-feed02.png", itemDetail:"img/02.png"}
-    )
-    items.push(
-      {name:"디럭스락 분유 200g", price:"8,250", img:"img/best-feed03.png", itemDetail:"img/03.png"}
-    )
-    items.push(
-      {name:"뉴트리나 퍼피 2.1kg", price:"12,500", img:"img/best-feed04.png", itemDetail:"img/04.png"}
-    )
-    items.push(
-      {name:"뉴트리나 어덜트 연어 2.1kg", price:"12,500", img:"img/best-feed05.png", itemDetail:"img/05.png"}
-    )
-    items.push(
-      {name:"뉴트리나 다이어트 2.1kg", price:"12,500", img:"img/best-snack01.png", itemDetail:"img/06.png"}
-    )
-    items.push(
-      {name:"CP 클래식 독 어덜트 소고기 2kg", price:"9,000", img:"img/best-snack02.png", itemDetail:"img/07.png"}
-    )
-    items.push(
-      {name:"CP 클래식 독 어덜트 닭고기 2kg", price:"9,000", img:"img/best-snack03.png", itemDetail:"img/08.png"}
-    )
-    items.push(
-      {name:"CP 클래식 독 어덜트 양고기 2kg", price:"9,000", img:"img/best-snack04.png", itemDetail:"img/09.png"}
-    )
-    items.push(
-      {name:"CP 클래식 퍼피 밀크 2kg", price:"9,000", img:"img/best-snack05.png", itemDetail:"img/10.png"}
-    )
-    items.push(
-      {name:"CP 클래식 어덜트 스몰 브리드 소고기 2kg", price:"9,000", img:"img/best-bath01.png", itemDetail:"img/11.png"}
-    )
-    items.push(
-      {name:"소프트플러스 참좋은 황태사료 연어 1kg", price:"12,600", img:"img/best-bath02.png", itemDetail:"img/12.png"}
-    )
-    items.push(
-      {name:"소프트플러스 참좋은 황태사료 오리 1kg", price:"12,600", img:"img/best-bath03.png", itemDetail:"img/13.png"}
-    )
-    items.push(
-      {name:"아침애 수제사료 한우 2.4kg", price:"44,000", img:"img/best-bath04.png", itemDetail:"img/14.png"}
-    )
-    items.push(
-      {name:"아침애 수제사료 오리 감자 연어 3kg", price:"44,000", img:"img/best-bath05.png", itemDetail:"img/15.png"}
-    )
-    items.push(
-      {name:"아침애 수제사료 오리 연어 감자 1kg", price:"15,400", img:"img/best-md01.png", itemDetail:"img/16.png"}
-    )
-    items.push(
-      {name:"아침애 수제사료 피부 개선 3kg", price:"44,000", img:"img/best-md02.png", itemDetail:"img/17.png"}
-    )
-    items.push(
-      {name:"아침애 수제사료 다이어트 1kg", price:"15,400", img:"img/best-md03.png", itemDetail:"img/18.png"}
-    )
-    items.push(
-      {name:"아침애 수제사료 한우 800g", price:"15,400", img:"img/best-md04.png", itemDetail:"img/19.png"}
-    )
-
-
     ///////////////////////////// 새로운 창에서 열기 /////////////////////////////
     function openNewWindowS(url){
       window.open(url, '_blank', 'width=450, height=450');

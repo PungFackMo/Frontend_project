@@ -14,7 +14,7 @@
     #item-img{
       flex: 0 0 auto;
       padding: 20px;
-      margin-left: 450px;
+      margin-left: 20%;
     }
     #item-img img{
       width: 300px;
@@ -22,13 +22,14 @@
     #item-pay{
       flex: 1;
       text-align: left;
-      margin-left: 200px;
+      margin-left: 10%;
       max-width: 500px;
       
     }
     .item-border{
       padding: 10px;
-      border: 1px solid black;
+      min-width: 500px;
+      border-bottom: 1px solid #d7d5d5;
     }
     #price{
       font-weight: bolder;
@@ -45,6 +46,7 @@
       border: 0;
       width: 60px;
       min-width: auto;
+      outline: none;
     }
     .price{
       width: auto;
@@ -55,19 +57,93 @@
     #price{
       font-weight: bold;
     }
+    #item-cnt{
+      color: red;
+    }
     .item-cnt{
       width: 30px;
     }
-    #detail-info{
+    .total-price{
+      font-size: 25px;
+    }
+    #total-quantity{
+      font-size: 25px;
+      width: 30px;
+      height: 20px;
+      border: 0;
+      outline: none;
 
     }
-    #guide{
-
+    #buy-button{
+      text-align: center;
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
+    #buy-button a{
+      padding-left: 30px;
+      padding-right: 30px;
+      padding-top: 12px;
+      padding-bottom: 12px;
+      margin-left: 5px;
+      margin-right: 5px;
+      border: 1px solid #d7d5d5;
+      background-color: white;
+      cursor: pointer;
+    }
+    #detail-info{
+      margin-top: 150px;
+      display: block;
+      text-align: center;
+    }
+    [id^=link-box] ul{
+      text-align: center;
+      list-style-type: none;
+      display: block;
+      padding: 0;
+      width: 500px;
+      margin: 0 auto;
+    }
+    [id^=link-box] li{
+      display: inline-block;
+      margin-left: 10px;
+      margin-right: 10px;
+    }
+    #link-DeIn{
+      font-weight: bolder;
+    }
+    #link-guide{
+      font-weight: bolder;
+    }
+    #guide-box{
+      border: 0;
+      background-color: #f5f5f5;
+      margin: 0 auto;
+      text-align: left;
+      width: auto;
+      max-width: 1000px;
+      min-width: 1000px;
+    }
+    #guide-box td{
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 30px;
+      padding-bottom: 30px;
+    }
+    #gb-head{
+      font-size: 20px;
+      font-weight: bold;
+    }
+    #gb-head small{
+      font-size: 12px;
+      color: #838383;
+    }
+    [id^=gb] p{
+      font-weight: bold;
     }
   </style>
 </head>
 <body>
-  <header>
+  <div class="header">
     <nav class="navbar"> <!-- nav 태그 -->
       <div class="link"> <!-- 링크 -->
         <a href="link-bookmark.html" onclick="openNewWindowS(this.href); return false;"> <!-- 북마크 -->
@@ -119,236 +195,311 @@
       </a>
     </h1>
     <div class="category-bar"> <!-- 카테고리 메뉴 -->
-      <ul>
+      <ul id="bar-list">
         <li>  <!-- 사료 -->
-          <a href="#">사료</a>
+          <a href="item-list.html?categoryID=01&bordID=01">사료</a>
         </li>
         <li class="cList">  <!-- 간식 -->
-          <a href="#">간식</a>
+          <a href="item-list.html?categoryID=02&bordID=01">간식</a>
           <div class="category-list" style="display: none;">
             <ul>
               <div class="category-list-arrow"></div>
               <li>
-                <a href="#">껌</a>
+                <a href="item-list.html?categoryID=02&bordID=01">껌</a>
               </li>
               <hr>
               <li>
-                <a href="#">캔/통조림</a>
+                <a href="item-list.html?categoryID=02&bordID=02">캔/통조림</a>
               </li>
               <hr>
               <li>
-                <a href="#">육포사사미(대용량)</a>
+                <a href="item-list.html?categoryID=02&bordID=03">육포사사미(대용량)</a>
               </li>
               <hr>
               <li>
-                <a href="#">육포사사미(소용량)</a>
+                <a href="item-list.html?categoryID=02&bordID=04">육포사사미(소용량)</a>
               </li>
               <hr>
               <li>
-                <a href="#">소세지/습식간식</a>
+                <a href="item-list.html?categoryID=02&bordID=05">소세지/습식간식</a>
               </li>
             </ul>
           </div>
         </li>
         <li class="cList">  <!-- 목욕용품 -->
-          <a href="#">목욕용품</a>
+          <a href="item-list.html?categoryID=03&bordID=01">목욕용품</a>
           <div class="category-list" style="display: none;">
             <ul>
               <div class="category-list-arrow"></div>
               <li>
-                <a href="#">타올/기타</a>
+                <a href="item-list.html?categoryID=03&bordID=01">타올/기타</a>
               </li>
               <hr>
               <li>
-                <a href="#">약용샴푸</a>
+                <a href="item-list.html?categoryID=03&bordID=02">약용샴푸</a>
               </li>
               <hr>
               <li>
-                <a href="#">샴푸린스겸용</a>
+                <a href="item-list.html?categoryID=03&bordID=03">샴푸린스겸용</a>
               </li>
               <hr>
               <li>
-                <a href="#">린스</a>
+                <a href="item-list.html?categoryID=03&bordID=04">린스</a>
               </li>
               <hr>
               <li>
-                <a href="#">샴푸</a>
+                <a href="item-list.html?categoryID=03&bordID=05">샴푸</a>
               </li>
             </ul>
           </div>
         </li>
         <li class="cList">  <!-- 영양제/의약외품/치아관리 -->
-          <a href="#">영양제/의약외품/치아관리</a>
+          <a href="item-list.html?categoryID=04&bordID=01">영양제/의약외품/치아관리</a>
           <div class="category-list" style="display: none;">
             <ul>
               <div class="category-list-arrow"></div>
               <li>
-                <a href="#">종합영양제</a>
+                <a href="item-list.html?categoryID=04&bordID=01">종합영양제</a>
               </li>
             </ul>
           </div>
         </li>
         <li class="cList">  <!-- 위생/배변/패드 -->
-          <a href="#">위생/배변/패드</a>
+          <a href="item-list.html?categoryID=05&bordID=01">위생/배변/패드</a>
           <div class="category-list" style="display: none;">
             <ul>
               <div class="category-list-arrow"></div>
               <li>
-                <a href="#">배변판/패드</a>
+                <a href="item-list.html?categoryID=05&bordID=01">배변판/패드</a>
               </li>
               <hr>
               <li>
-                <a href="#">기저귀/팬티</a>
+                <a href="item-list.html?categoryID=05&bordID=02">기저귀/팬티</a>
               </li>
             </ul>
           </div>
         </li>
         <li>  <!-- 이동용품/애견줄/하우스 -->
-          <a href="#">이동용품/애견줄/하우스</a>
+          <a href="item-list.html?categoryID=06&bordID=01">이동용품/애견줄/하우스</a>
         </li>
         <li>  <!-- 안전문/철장 -->
-          <a href="#">안전문/철장</a>
+          <a href="item-list.html?categoryID=07&bordID=01">안전문/철장</a>
         </li>
         <li>  <!-- 장난감/훈련용품 -->
-          <a href="#">장난감/훈련용품</a>
+          <a href="item-list.html?categoryID=08&bordID=01">장난감/훈련용품</a>
         </li>
         <li class="cList">  <!-- 급식기/급수기 -->
-          <a href="#">급식기/급수기</a>
+          <a href="item-list.html?categoryID=09&bordID=01">급식기/급수기</a>
           <div class="category-list" style="display: none;">
             <ul>
               <div class="category-list-arrow"></div>
               <li>
-                <a href="#">급식기/급수기</a>
+                <a href="item-list.html?categoryID=09&bordID=01">급식기/급수기</a>
               </li>
               <hr>
               <li>
-                <a href="#">쌍식기</a>
+                <a href="item-list.html?categoryID=09&bordID=02">쌍식기</a>
               </li>
               <hr>
               <li>
-                <a href="#">사료 보관통</a>
+                <a href="item-list.html?categoryID=09&bordID=03">사료 보관통</a>
               </li>
             </ul>
           </div>
         </li>
         <li>  <!-- 고양이 사료 -->
-          <a href="#">고양이 사료</a>
+          <a href="item-list.html?categoryID=10&bordID=01">고양이 사료</a>
         </li>
         <li class="cList">  <!-- 고양이 간식 -->
-          <a href="#">고양이 간식</a>
+          <a href="item-list.html?categoryID=11&bordID=01">고양이 간식</a>
           <div class="category-list" style="display: none;">
             <ul>
               <div class="category-list-arrow"></div>
               <li>
-                <a href="#">간식캔</a>
+                <a href="item-list.html?categoryID=11&bordID=01">간식캔</a>
               </li>
               <hr>
               <li>
-                <a href="#">파우치</a>
+                <a href="item-list.html?categoryID=11&bordID=02">파우치</a>
               </li>
               <hr>
               <li>
-                <a href="#">져키/동결건조</a>
+                <a href="item-list.html?categoryID=11&bordID=03">져키/동결건조</a>
               </li>
               <hr>
               <li>
-                <a href="#">스낵&드롭스</a>
+                <a href="item-list.html?categoryID=11&bordID=04">스낵&드롭스</a>
               </li>
               <hr>
               <li>
-                <a href="#">통살&닭가슴살</a>
+                <a href="item-list.html?categoryID=11&bordID=05">통살&닭가슴살</a>
               </li>
             </ul>
           </div>
         </li>
         <li class="cList">  <!-- 모래/화장실/식시 -->
-          <a href="#">모래/화장실/식시</a>
+          <a href="item-list.html?categoryID=12&bordID=01">모래/화장실/식시</a>
           <div class="category-list" style="display: none;">
             <ul>
               <div class="category-list-arrow"></div>
               <li>
-                <a href="#">모래</a>
+                <a href="item-list.html?categoryID=12&bordID=01">모래</a>
               </li>
               <hr>
               <li>
-                <a href="#">화장실</a>
+                <a href="item-list.html?categoryID=12&bordID=02">화장실</a>
               </li>
               <hr>
               <li>
-                <a href="#">급식기/급수기</a>
+                <a href="item-list.html?categoryID=12&bordID=03">급식기/급수기</a>
               </li>
               <hr>
               <li>
-                <a href="#">쌍식기</a>
+                <a href="item-list.html?categoryID=12&bordID=04">쌍식기</a>
               </li>
             </ul>
           </div>
         </li>
       </ul>
     </div>
-  </header>
-  <main>
+  </div>
+  <div class="main">
     <div class="item">
       <div id="item-img">
-        <img src="img/best-feed01.png">
+          <img id="product-image" src="img/default.png">
       </div>
       <div id="item-pay">
-        <div class="item-border">
-          <h2 class="name">
-            데이스포 초유분유 200g
-          </h2>
-        </div>
-        <div class="item-border">
-          <div class="item-line">
-            <label id="price">
-              판매가
-            </label>
-            <input type="text" class="price" value="15,000 원" readonly>
+          <div class="item-border">
+              <h2 class="name" id="product-name">제품 이름</h2>
           </div>
-          <div class="item-line">
-            <label id="delivery">
-              국내·해외배송
-            </label>
-            <input type="text" class="delivery" value="국내배송" readonly>
+          <div class="item-border">
+              <div class="item-line">
+                  <label id="price-label">판매가</label>
+                  <input type="text" class="price" id="product-price" value="0 원" readonly>
+              </div>
+              <div class="item-line">
+                  <label id="delivery-label">국내·해외배송</label>
+                  <input type="text" class="delivery" id="product-delivery" value="국내배송" readonly>
+              </div>
+              <div class="item-line">
+                  <label id="delivery-price-label">배송비</label>
+                  <input type="text" class="delivery-price" id="product-delivery-price" value="0 원" readonly>
+              </div>
           </div>
-          <div class="item-line">
-            <label id="delivery-price">
-              배송비
-            </label>
-            <input type="text" class="delivery-price" value="2,500 원" readonly>
+          <div class="item-border">
+              <span>(최소주문수량 1개 이상)</span>
+              <br>
+              <br>
+              <img src="img/ico_info.gif">
+              <span id="item-cnt">수량을 선택해주세요.</span>
           </div>
-        </div>
-        <div class="item-border">
-          <span>
-            (최소주문수량 1개 이상)
-          </span>
-          <br>
-          <br>
-          <span id="item-cnt">
-            수량을 선택해주세요.
-          </span>
-        </div>
-        <div class="item-border">
-          <span class="name">
-            데이스포 초유분유 200g
-          </span>
-          <input type="number" class="item-cnt" minlength="1" value="1">10,500원
-        </div>
-        <div class="item-border">
-          <span class="total-price">
-            총 상품금액(수량) : 10,500원 (1개)
-          </span>
-        </div>
-        
-      </div?>
-      <div id="detail-info">
-  
-      </div>
-      <div id="guide">
-  
+          <div class="item-border">
+              <span class="name" id="product-name-confirm">제품 이름</span>
+              <span id="product-unit-price">0원</span>
+              <input type="number" class="item-cnt" id="product-quantity" min="1" max="99" value="1">
+          </div>
+          <div class="item-border">
+              <span class="total-price">
+                  총 상품금액(수량) : <span id="total-product-price">0원</span> (<input type="text" id="total-quantity" value="0" readonly>개)
+              </span>
+          </div>
+          <div class="item-border">
+              <div id="buy-button">
+                  <a href="#" id="buy-now">BUY NOW</a><a href="#" id="add-to-cart">ADD TO CART</a>
+              </div>
+          </div>
       </div>
     </div>
-  </main>
+    <div id="detail-info">
+        <div id="link-box-DeIn">
+            <ul>
+                <li><a href="#link-box-DeIn" id="link-DeIn">DETAIL INFO</a></li>
+                <li><a href="#link-box-guide">GUIDE</a></li>
+            </ul>
+            <hr>
+        </div>
+        <div>
+            <img id="product-detail-image" src="img/default.png">
+        </div>
+    </div>
+    <div id="guide">
+      <div id="link-box-guide">
+        <ul>
+          <li>
+            <a href="#link-box-DeIn">
+              DETAIL INFO
+            </a>
+          </li>
+          <li>
+            <a href="#link-box-guide" id="link-guide">
+              GUIDE
+            </a>
+          </li>
+        </ul>
+        <hr>
+      </div>
+      <div id="guide-box">
+        <table class="giude-box-table">
+          <tr>
+            <td id="gb-head">
+              <span>SHOPPING GUIDE</span> <small>구매전 필독사항 입니다 :)</small>
+            </td>
+          </tr>
+          <tr>
+            <td id="gb-paymentInfo">
+              <p>상품결제정보</p>
+              <span>
+                고액결제의 경우 안전을 위해 카드사에서 확인전화를 드릴 수도 있습니다. 확인과정에서 도난 카드의 사용이나 타인 명의의 주문등 정상적인 주문이 아니라고 판단될 경우 임의로 주문을 보류 또는 취소할 수 있습니다.<br>
+                무통장 입금은 상품 구매 대금은 PC뱅킹, 인터넷뱅킹, 텔레뱅킹 혹은 가까운 은행에서 직접 입금하시면 됩니다.<br>
+                주문시 입력한 입금자명과 실제입금자의 성명이 반드시 일치하여야 하며, 7일 이내로 입금을 하셔야 하며 입금되지 않은 주문은 자동취소 됩니다.
+              </span>
+            </td>
+          </tr>
+          <tr>
+            <td id="gb-deliveryInfo">
+              <p>배송정보</p>
+              <span>
+                배송 방법 : 택배<br>
+                배송 지역 : 전국지역<br>
+                배송 비용 : 2,500원<br>
+                배송 기간 : 3일 ~ 7일<br>
+                배송 안내 : - 산간벽지나 도서지방은 별도의 추가금액을 지불하셔야 하는 경우가 있습니다.<br>
+                고객님께서 주문하신 상품은 입금 확인후 배송해 드립니다. 다만, 상품종류에 따라서 상품의 배송이 다소 지연될 수 있습니다.
+              </span>
+            </td>
+          </tr>
+          <tr>
+            <td id="gb-returnInfo">
+              <p>교환 및 반품정보</p>
+              <div>
+                <span>교환 및 반품이 가능한 경우</span>
+              </div>
+              <span>
+                - 계약내용에 관한 서면을 받은 날부터 7일. 단, 그 서면을 받은 때보다 재화등의 공급이 늦게 이루어진 경우에는 재화등을 공급받거나 재화등의 공급이 시작된 날부터 7일 이내<br>
+                - 공급받으신 상품 및 용역의 내용이 표시.광고 내용과 다르거나 계약내용과 다르게 이행된 때에는 당해 재화 등을 공급받은 날 부터 3월이내, 그사실을 알게 된 날 또는 알 수 있었던 날부터 30일이내
+              </span>
+              <div>
+                <span>교환 및 반품이 불가능한 경우</span>
+              </div>
+              <span>
+                - 이용자에게 책임 있는 사유로 재화 등이 멸실 또는 훼손된 경우(다만, 재화 등의 내용을 확인하기 위하여 포장 등을 훼손한 경우에는 청약철회를 할 수 있습니다)<br>
+                - 이용자의 사용 또는 일부 소비에 의하여 재화 등의 가치가 현저히 감소한 경우<br>
+                - 시간의 경과에 의하여 재판매가 곤란할 정도로 재화등의 가치가 현저히 감소한 경우<br>
+                - 복제가 가능한 재화등의 포장을 훼손한 경우<br>
+                - 개별 주문 생산되는 재화 등 청약철회시 판매자에게 회복할 수 없는 피해가 예상되어 소비자의 사전 동의를 얻은 경우<br>
+                - 디지털 콘텐츠의 제공이 개시된 경우, (다만, 가분적 용역 또는 가분적 디지털콘텐츠로 구성된 계약의 경우 제공이 개시되지 아니한 부분은 청약철회를 할 수 있습니다.)<br>
+              </span>
+              <br>
+              <span>
+                ※ 고객님의 마음이 바뀌어 교환, 반품을 하실 경우 상품반송 비용은 고객님께서 부담하셔야 합니다.<br>
+                (색상 교환, 사이즈 교환 등 포함)
+              </span>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
   <footer>
     <div class="customer">
       <div class="customer-center">
@@ -372,67 +523,122 @@
 
 
   <script>
-    ////////////////////////////////// 제품상세 ///////////////////////////////////
+    ///////////////////////////////////////////////////////////////////////////
+    ////////////////////////////////// 제품 ///////////////////////////////////
     const items=[]
 
     items.push(
-      {name:"데이스포 초유분유 200g", price:"10,500", img:"img/best-feed01.png", itemDetail:"img/01.png"}
+      {itemID:"001", name:"데이스포 초유분유 200g", priceFront:"10", priceBack:"500", priceUnit:"원", img:"img/best-feed01.png", itemDetail:"img/01.png"}
     )
     items.push(
-      {name:"도기프랜드 클라쎄밀 분유 180g", price:"6,750", img:"img/best-feed02.png", itemDetail:"img/02.png"}
+      {itemID:"002", name:"도기프랜드 클라쎄밀 분유 180g", priceFront:"6", priceBack:"750", priceUnit:"원", img:"img/best-feed02.png", itemDetail:"img/02.png"}
     )
     items.push(
-      {name:"디럭스락 분유 200g", price:"8,250", img:"img/best-feed03.png", itemDetail:"img/03.png"}
+      {itemID:"003", name:"디럭스락 분유 200g", priceFront:"8", priceBack:"250", priceUnit:"원", img:"img/best-feed03.png", itemDetail:"img/03.png"}
     )
     items.push(
-      {name:"뉴트리나 퍼피 2.1kg", price:"12,500", img:"img/best-feed04.png", itemDetail:"img/04.png"}
+      {itemID:"004", name:"뉴트리나 퍼피 2.1kg", priceFront:"12", priceBack:"500", priceUnit:"원", img:"img/best-feed04.png", itemDetail:"img/04.png"}
     )
     items.push(
-      {name:"뉴트리나 어덜트 연어 2.1kg", price:"12,500", img:"img/best-feed05.png", itemDetail:"img/05.png"}
+      {itemID:"005", name:"뉴트리나 어덜트 연어 2.1kg", priceFront:"12", priceBack:"500", priceUnit:"원", img:"img/best-feed05.png", itemDetail:"img/05.png"}
     )
     items.push(
-      {name:"뉴트리나 다이어트 2.1kg", price:"12,500", img:"img/best-snack01.png", itemDetail:"img/06.png"}
+      {itemID:"006", name:"뉴트리나 다이어트 2.1kg", priceFront:"12", priceBack:"500", priceUnit:"원", img:"img/best-snack01.png", itemDetail:"img/06.png"}
     )
     items.push(
-      {name:"CP 클래식 독 어덜트 소고기 2kg", price:"9,000", img:"img/best-snack02.png", itemDetail:"img/07.png"}
+      {itemID:"007", name:"CP 클래식 독 어덜트 소고기 2kg", priceFront:"9", priceBack:"000", priceUnit:"원", img:"img/best-snack02.png", itemDetail:"img/07.png"}
     )
     items.push(
-      {name:"CP 클래식 독 어덜트 닭고기 2kg", price:"9,000", img:"img/best-snack03.png", itemDetail:"img/08.png"}
+      {itemID:"008", name:"CP 클래식 독 어덜트 닭고기 2kg", priceFront:"9", priceBack:"000", priceUnit:"원", img:"img/best-snack03.png", itemDetail:"img/08.png"}
     )
     items.push(
-      {name:"CP 클래식 독 어덜트 양고기 2kg", price:"9,000", img:"img/best-snack04.png", itemDetail:"img/09.png"}
+      {itemID:"009", name:"CP 클래식 독 어덜트 양고기 2kg", priceFront:"9", priceBack:"000", priceUnit:"원", img:"img/best-snack04.png", itemDetail:"img/09.png"}
     )
     items.push(
-      {name:"CP 클래식 퍼피 밀크 2kg", price:"9,000", img:"img/best-snack05.png", itemDetail:"img/10.png"}
+      {itemID:"010", name:"CP 클래식 퍼피 밀크 2kg", priceFront:"9", priceBack:"000", priceUnit:"원", img:"img/best-snack05.png", itemDetail:"img/10.png"}
     )
     items.push(
-      {name:"CP 클래식 어덜트 스몰 브리드 소고기 2kg", price:"9,000", img:"img/best-bath01.png", itemDetail:"img/11.png"}
+      {itemID:"011", name:"CP 클래식 어덜트 스몰 브리드 소고기 2kg", priceFront:"9", priceBack:"000", priceUnit:"원", img:"img/best-bath01.png", itemDetail:"img/11.png"}
     )
     items.push(
-      {name:"소프트플러스 참좋은 황태사료 연어 1kg", price:"12,600", img:"img/best-bath02.png", itemDetail:"img/12.png"}
+      {itemID:"012", name:"소프트플러스 참좋은 황태사료 연어 1kg", priceFront:"12", priceBack:"600", priceUnit:"원", img:"img/best-bath02.png", itemDetail:"img/12.png"}
     )
     items.push(
-      {name:"소프트플러스 참좋은 황태사료 오리 1kg", price:"12,600", img:"img/best-bath03.png", itemDetail:"img/13.png"}
+      {itemID:"013", name:"소프트플러스 참좋은 황태사료 오리 1kg", priceFront:"12", priceBack:"600", priceUnit:"원", img:"img/best-bath03.png", itemDetail:"img/13.png"}
     )
     items.push(
-      {name:"아침애 수제사료 한우 2.4kg", price:"44,000", img:"img/best-bath04.png", itemDetail:"img/14.png"}
+      {itemID:"014", name:"아침애 수제사료 한우 2.4kg", priceFront:"44", priceBack:"000", priceUnit:"원", img:"img/best-bath04.png", itemDetail:"img/14.png"}
     )
     items.push(
-      {name:"아침애 수제사료 오리 감자 연어 3kg", price:"44,000", img:"img/best-bath05.png", itemDetail:"img/15.png"}
+      {itemID:"015", name:"아침애 수제사료 오리 감자 연어 3kg", priceFront:"44", priceBack:"000", priceUnit:"원", img:"img/best-bath05.png", itemDetail:"img/15.png"}
     )
     items.push(
-      {name:"아침애 수제사료 오리 연어 감자 1kg", price:"15,400", img:"img/best-md01.png", itemDetail:"img/16.png"}
+      {itemID:"016", name:"아침애 수제사료 오리 연어 감자 1kg", priceFront:"15", priceBack:"400", priceUnit:"원", img:"img/best-md01.png", itemDetail:"img/16.png"}
     )
     items.push(
-      {name:"아침애 수제사료 피부 개선 3kg", price:"44,000", img:"img/best-md02.png", itemDetail:"img/17.png"}
+      {itemID:"017", name:"아침애 수제사료 피부 개선 3kg", priceFront:"44", priceBack:"000", priceUnit:"원", img:"img/best-md02.png", itemDetail:"img/17.png"}
     )
     items.push(
-      {name:"아침애 수제사료 다이어트 1kg", price:"15,400", img:"img/best-md03.png", itemDetail:"img/18.png"}
+      {itemID:"018", name:"아침애 수제사료 다이어트 1kg", priceFront:"15", priceBack:"400", priceUnit:"원", img:"img/best-md03.png", itemDetail:"img/18.png"}
     )
     items.push(
-      {name:"아침애 수제사료 한우 800g", price:"15,400", img:"img/best-md04.png", itemDetail:"img/19.png"}
+      {itemID:"019", name:"아침애 수제사료 한우 800g", priceFront:"15", priceBack:"400", priceUnit:"원", img:"img/best-md04.png", itemDetail:"img/19.png"}
     )
 
+    ////////////////////////////////////////////////////////////////////////////
+    ////////////////////////////////// 제품상세 ///////////////////////////////////
+    // 제품 세부 정보를 로드하는 함수
+    function loadProductDetails(itemID) {
+        const product = items.find(item => item.itemID === itemID);
+
+        if (product) {
+            const unitPrice = parseInt(product.priceFront) * 1000 + parseInt(product.priceBack);
+
+            document.getElementById('product-image').src = product.img;
+            document.getElementById('product-name').innerText = product.name;
+            document.getElementById('product-price').value = `${product.priceFront},${product.priceBack} ${product.priceUnit}`;
+            document.getElementById('product-delivery').value = "국내배송";
+            document.getElementById('product-delivery-price').value = "2,500 원";
+            document.getElementById('product-name-confirm').innerText = product.name;
+            document.getElementById('product-unit-price').innerText = `${product.priceFront},${product.priceBack} ${product.priceUnit}`;
+            document.getElementById('total-product-price').innerText = `${product.priceFront},${product.priceBack} ${product.priceUnit}`;
+            document.getElementById('total-quantity').value = 1;
+            document.getElementById('product-detail-image').src = product.itemDetail;
+            
+            // 업데이트 할 때 현재 단가도 저장
+            document.getElementById('product-quantity').setAttribute('data-unit-price', unitPrice);
+            
+            // 수량 변경 이벤트 리스너 추가
+            document.getElementById('product-quantity').addEventListener('input', updateTotalPrice);
+        } else {
+            console.error('제품을 찾을 수 없습니다.');
+        }
+    }
+    // 총 가격을 계산하여 업데이트하는 함수
+    function updateTotalPrice() {
+        const quantityInput = document.getElementById('product-quantity');
+        const quantity = parseInt(quantityInput.value);
+        const unitPrice = parseInt(quantityInput.getAttribute('data-unit-price'));
+        const totalPrice = quantity * unitPrice;
+
+        // 총 가격을 포맷하여 표시
+        const totalPriceFormatted = new Intl.NumberFormat('ko-KR', { style: 'currency', currency: 'KRW' }).format(totalPrice);
+
+        document.getElementById('total-product-price').innerText = totalPriceFormatted;
+        document.getElementById('total-quantity').value = quantity;
+    }
+
+    // 페이지 로드 시 또는 특정 이벤트에서 함수 호출
+    document.addEventListener('DOMContentLoaded', function() {
+        const urlParams = new URLSearchParams(window.location.search);
+        const itemID = urlParams.get('itemID');
+
+        if (itemID) {
+            loadProductDetails(itemID);
+        }
+    });
+    // 페이지 로드 시 또는 특정 이벤트에서 함수 호출
+    loadProductDetails("${param.itemID}");
     ////////////////////////////////////////////////////////////////////////////
     ///////////////////////////// 새로운 창에서 열기 /////////////////////////////
     function openNewWindowS(url){

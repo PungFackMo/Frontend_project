@@ -117,6 +117,7 @@
       }
       .category-bar ul{
         margin: 0 auto;
+        width: auto;
         padding: 0;
       }
       .category-bar li{
