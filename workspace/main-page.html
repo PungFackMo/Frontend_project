@@ -231,9 +231,9 @@
         </div>
       </div>
       <div class="user-link"> <!-- 유저페이지 -->
-        <a href="login.html">LOGIN</a> <!-- 로그인 -->
+        <a href="login.html" id="a-login">LOGIN</a> <!-- 로그인 -->
         |
-        <a href="join.html">JOIN</a> <!-- 회원가입 -->
+        <a href="join.html" id="a-join">JOIN</a> <!-- 회원가입 -->
         |
         <a href="#">MY PAGE</a> <!-- 회원페이지 -->
         |
@@ -420,17 +420,17 @@
   <div class="sliderMenu">
     <div class="slider" id="slider"> <!-- 슬라이더 메뉴 -->
       <div class="slides">
-        <a href="#" class="slide"> <!-- 간식 -->
+        <a href="item-list.html?categoryID=02&bordID=01" class="slide"> <!-- 간식 -->
           <img src="img/pet01.png">
         </a>
       </div>
       <div class="slides">
-        <a href="#" class="slide"> <!-- 강아지사료 -->
+        <a href="item-list.html?categoryID=01&bordID=01" class="slide"> <!-- 강아지사료 -->
           <img src="img/pet02.png">
         </a>
       </div>
       <div class="slides">
-        <a href="#" class="slide"> <!-- 고양이사료 -->
+        <a href="item-list.html?categoryID=10&bordID=01" class="slide"> <!-- 고양이사료 -->
           <img src="img/pet03.png">
         </a>
       </div>
@@ -455,7 +455,7 @@
       <div class="main-banner">
         <ul>
           <li class="main-banner-list">
-            <a href="join.html">
+            <a href="join.html" id="banner-join">
               <img src="img/content01.png" alt="join">
             </a>
           </li>
@@ -942,6 +942,61 @@
 
 
   <script>
+    // 페이지의 URL에서 loginIndex 매개변수 가져오기
+    const storedData = localStorage.getItem('loginIndex');
+    let loginIndex = JSON.parse(storedData);
+
+    //로그아웃
+    function changeLogout(){
+      if(loginIndex===1){
+        document.getElementById("a-login").innerText="LOGOUT";
+        document.getElementById("a-login").href="";
+        document.getElementById("a-join").href="";
+        document.getElementById("banner-join").href="";
+        document.getElementById("a-login").classList.add("logout");
+        const logout=document.querySelector(".logout");
+        logout.addEventListener("click",()=>{
+          loginIndex=0;
+          localStorage.setItem('loginIndex', JSON.stringify(loginIndex));
+          document.getElementById("a-login").classList.remove("logout");
+          document.getElementById("a-login").innerText="LOGIN";
+          document.getElementById("a-login").href="login.html";
+          document.getElementById("a-join").href="join.html";
+          document.getElementById("banner-join").href="join.html";
+        })
+        const aJoin=document.querySelector("#a-join")
+        aJoin.addEventListener("click",()=>{
+          const result=confirm("로그아웃 하시겠습니까?");
+          if(result===true){
+            alert("로그아웃 되었습니다.")
+            loginIndex=0;
+            localStorage.setItem('loginIndex', JSON.stringify(loginIndex));
+            document.getElementById("a-login").classList.remove("logout");
+            document.getElementById("a-login").innerText="LOGIN";
+            document.getElementById("a-login").href="login.html";
+            document.getElementById("a-join").href="join.html";
+            document.getElementById("banner-join").href="join.html";
+          }
+        })
+        const bJoin=document.querySelector("#banner-join")
+        bJoin.addEventListener("click",()=>{
+          const result=confirm("로그아웃 하시겠습니까?");
+          if(result===true){
+            alert("로그아웃 되었습니다.")
+            loginIndex=0;
+            localStorage.setItem('loginIndex', JSON.stringify(loginIndex));
+            document.getElementById("a-login").classList.remove("logout");
+            document.getElementById("a-login").innerText="LOGIN";
+            document.getElementById("a-login").href="login.html";
+            document.getElementById("a-join").href="join.html";
+            document.getElementById("banner-join").href="join.html";
+          }
+        })
+      }
+    }
+    changeLogout()
+    
+    
     ///////////////////////////// 새로운 창에서 열기 /////////////////////////////
     function openNewWindowS(url){
       window.open(url, '_blank', 'width=450, height=450');
@@ -1072,18 +1127,16 @@
     }
     
     // 마우스를 링크에 올릴 때 슬라이드 보이기
-    bLLinks.forEach(link => {
+    bLLinks.forEach((link, index) => {
       link.addEventListener('mouseover', function() {
         bLSlides.forEach(slide => slide.classList.remove('active'));
-        const targetIndex = link.getAttribute('data-target');
-        bLSlides[targetIndex].classList.add('active');
+        bLSlides[index].classList.add('active');
         stopBLSlides(); // 슬라이드 쇼를 멈춤
         isMouseOver = true; // 마우스가 올려진 상태로 설정
       });
-  
+
       link.addEventListener('mouseout', function() {
         isMouseOver = false; // 마우스가 벗어난 상태로 설정
-        bLSIndex = parseInt(link.getAttribute('data-target')); // 현재 슬라이드 인덱스 설정
         startBLSlides(); // 슬라이드 쇼를 다시 시작
       });
     });

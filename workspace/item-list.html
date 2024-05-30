@@ -82,9 +82,9 @@
         </div>
       </div>
       <div class="user-link"> <!-- 유저페이지 -->
-        <a href="login.html">LOGIN</a> <!-- 로그인 -->
+        <a href="login.html" id="a-login">LOGIN</a> <!-- 로그인 -->
         |
-        <a href="join.html">JOIN</a> <!-- 회원가입 -->
+        <a href="join.html" id="a-join">JOIN</a> <!-- 회원가입 -->
         |
         <a href="#">MY PAGE</a> <!-- 회원페이지 -->
         |
@@ -440,6 +440,54 @@
 
 
   <script>
+    ///////////////////////////// 마우스 on/off 01 /////////////////////////////
+
+    //마우스가 위에 있을 시 메뉴 보이게 하기
+    function showMenu() {
+      document.getElementById("menuList").style.display = "block";
+    }
+    //마우스가 위에 없을 시 메뉴 숨기기
+    function hideMenu() {
+      document.getElementById("menuList").style.display = "none";
+    }
+    ////////////////////////////////////////////////////////////////////////////
+    const storedData = localStorage.getItem('loginIndex');
+    let loginIndex = JSON.parse(storedData);
+
+    //로그아웃
+    function changeLogout(){
+      if(loginIndex===1){
+        document.getElementById("a-login").innerText="LOGOUT";
+        document.getElementById("a-login").href="";
+        document.getElementById("a-join").href="";
+        document.getElementById("a-login").classList.add("logout");
+        const logout=document.querySelector(".logout");
+        logout.addEventListener("click",()=>{
+          loginIndex=0;
+          localStorage.setItem('loginIndex', JSON.stringify(loginIndex));
+          document.getElementById("a-login").classList.remove("logout");
+          document.getElementById("a-login").innerText="LOGIN";
+          document.getElementById("a-login").href="login.html";
+          document.getElementById("a-join").href="join.html";
+        })
+        const aJoin=document.querySelector("#a-join")
+        aJoin.addEventListener("click",()=>{
+          const result=confirm("로그아웃 하시겠습니까?");
+          if(result===true){
+            alert("로그아웃 되었습니다.")
+            loginIndex=0;
+            localStorage.setItem('loginIndex', JSON.stringify(loginIndex));
+            document.getElementById("a-login").classList.remove("logout");
+            document.getElementById("a-login").innerText="LOGIN";
+            document.getElementById("a-login").href="login.html";
+            document.getElementById("a-join").href="join.html";
+          }else{
+
+          }
+        })
+      }
+    }
+    changeLogout()
     //////////////////////////////// 카테고리 //////////////////////////////////
     const categoryIDs=[]
 
@@ -553,18 +601,7 @@
     function openNewWindowL(url){
       window.open(url, '_blank');
     }
-    ////////////////////////////////////////////////////////////////////////////
-    ///////////////////////////// 마우스 on/off 01 /////////////////////////////
-
-    //마우스가 위에 있을 시 메뉴 보이게 하기
-    function showMenu() {
-      document.getElementById("menuList").style.display = "block";
-    }
-    //마우스가 위에 없을 시 메뉴 숨기기
-    function hideMenu() {
-      document.getElementById("menuList").style.display = "none";
-    }
-    ////////////////////////////////////////////////////////////////////////////
+    // ////////////////////////////////////////////////////////////////////////////
     ///////////////////////////// 마우스 on/off 02 /////////////////////////////
 
     //마우스가 위에 있을 시 리스트 보이게 하는 함수

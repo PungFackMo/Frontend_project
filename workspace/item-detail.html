@@ -177,9 +177,9 @@
         </div>
       </div>
       <div class="user-link"> <!-- 유저페이지 -->
-        <a href="login.html">LOGIN</a> <!-- 로그인 -->
+        <a href="login.html" id="a-login">LOGIN</a> <!-- 로그인 -->
         |
-        <a href="join.html">JOIN</a> <!-- 회원가입 -->
+        <a href="join.html" id="a-join">JOIN</a> <!-- 회원가입 -->
         |
         <a href="#">MY PAGE</a> <!-- 회원페이지 -->
         |
@@ -366,7 +366,7 @@
   <div class="main">
     <div class="item">
       <div id="item-img">
-          <img id="product-image" src="img/default.png">
+          <img id="product-image" src="">
       </div>
       <div id="item-pay">
           <div class="item-border">
@@ -419,7 +419,7 @@
             <hr>
         </div>
         <div>
-            <img id="product-detail-image" src="img/default.png">
+            <img id="product-detail-image" src="#">
         </div>
     </div>
     <div id="guide">
@@ -523,6 +523,43 @@
 
 
   <script>
+    const storedData = localStorage.getItem('loginIndex');
+    let loginIndex = JSON.parse(storedData);
+
+    //로그아웃
+    function changeLogout(){
+      if(loginIndex===1){
+        document.getElementById("a-login").innerText="LOGOUT";
+        document.getElementById("a-login").href="";
+        document.getElementById("a-join").href="";
+        document.getElementById("a-login").classList.add("logout");
+        const logout=document.querySelector(".logout");
+        logout.addEventListener("click",()=>{
+          loginIndex=0;
+          localStorage.setItem('loginIndex', JSON.stringify(loginIndex));
+          document.getElementById("a-login").classList.remove("logout");
+          document.getElementById("a-login").innerText="LOGIN";
+          document.getElementById("a-login").href="login.html";
+          document.getElementById("a-join").href="join.html";
+        })
+        const aJoin=document.querySelector("#a-join")
+        aJoin.addEventListener("click",()=>{
+          const result=confirm("로그아웃 하시겠습니까?");
+          if(result===true){
+            alert("로그아웃 되었습니다.")
+            loginIndex=0;
+            localStorage.setItem('loginIndex', JSON.stringify(loginIndex));
+            document.getElementById("a-login").classList.remove("logout");
+            document.getElementById("a-login").innerText="LOGIN";
+            document.getElementById("a-login").href="login.html";
+            document.getElementById("a-join").href="join.html";
+          }else{
+
+          }
+        })
+      }
+    }
+    changeLogout()
     ///////////////////////////////////////////////////////////////////////////
     ////////////////////////////////// 제품 ///////////////////////////////////
     const items=[]
@@ -638,7 +675,6 @@
         }
     });
     // 페이지 로드 시 또는 특정 이벤트에서 함수 호출
-    loadProductDetails("${param.itemID}");
     ////////////////////////////////////////////////////////////////////////////
     ///////////////////////////// 새로운 창에서 열기 /////////////////////////////
     function openNewWindowS(url){

@@ -706,6 +706,9 @@
     userDB.push(
       {userID:"001", id:"admin" , pw:"admin", name:"여정모", telFront:"010", telMiddle:"1234", telFinal:"1234", email:"duwjdah2001@gmail.com"}
     )
+    userDB.push(
+      {userID:"002", id:"admin2" , pw:"admin2", name:"수정모", telFront:"010", telMiddle:"2222", telFinal:"3333", email:"12345@gmail.com"}
+    )
 
     allCheck.addEventListener("change", () => {
       checkboxes.forEach(checkbox => {
@@ -724,7 +727,7 @@
       const email=document.getElementById("user-email");
       const termsUseCheckbox=document.getElementById("terms-use-checkbox");
       const termsPerInfoCheckbox=document.getElementById("terms-perInfo-checkbox");
-
+      
       //회원가입 input 조건
       if(ID.value.trim() === ""){
         alert("아이디를 입력하세요");
@@ -771,6 +774,10 @@
       }
 
       //회원가입 시 user정보 userdb에 추가
+      function openLogin(url) {
+        console.log(`Opening URL: ${url}`); // URL 확인
+        window.open(url, '_self');
+      }
       let IDIndex=1;
       while(true){
         const paddedIDIndex = IDIndex.toString().padStart(3, '0');
@@ -778,14 +785,25 @@
           IDIndex++
         }else{
           userDB.push(
-          {userID:paddedIDIndex.value, id:ID.value , pw:PW.value, name:name.value, telFront:telFront.value, telMiddle:telMiddel.value, telFinal:telFinal.value, email:email.value}
-        )
-        alert("회원가입이 완료되었습니다")
-        break;
+            {userID:paddedIDIndex.value, id:ID.value , pw:PW.value, name:name.value, telFront:telFront.value, telMiddle:telMiddel.value, telFinal:telFinal.value, email:email.value}
+          )
+          //로컬 스토리지에 저장
+          localStorage.setItem('userData', JSON.stringify(userDB));
+          alert("회원가입이 완료되었습니다")
+          event.preventDefault()
+          openLogin('main-page.html');
+          break;
         }
       }
     });
     ////////////////////////////////////////////////////////////////////////////
+    ////////////////////////////////// 정보전달 ///////////////////////////////////
+    localStorage.setItem('userData', JSON.stringify(userDB));
+
+    //배열 데이터를 JSON 문자열로 변환후 URL 인코딩
+    const jsonArray = JSON.stringify(userDB);
+    const encodeArray=encodeURIComponent(jsonArray);
+
     ///////////////////////////// 새로운 창에서 열기 /////////////////////////////
     function openNewWindowS(url){
       window.open(url, '_blank', 'width=450, height=450');

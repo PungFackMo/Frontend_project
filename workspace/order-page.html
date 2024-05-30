@@ -6,86 +6,6 @@
   <title>PET LOVER</title>
   <link href="css/main.css" rel="stylesheet" type="text/css">
   <style>
-    .login{
-      text-align: center;
-      margin-top: 100px;
-
-    }
-    .login-page{
-      max-width: 310px;
-      margin: 0 auto;
-    }
-    #login-title{
-      font-weight: bolder;
-      font-size: 20px;
-      margin-bottom: 50px;
-    }
-    #lock{
-      text-align: left;
-      padding-left: 5px;
-      
-    }
-    #lock img{
-      max-width: 10px;
-      margin-right: 5px;
-    }
-    #lock span{
-      color: #929292;
-    }
-    #login-content input{
-      width: 290px;
-      height: 40px;
-      margin-bottom: 5px;
-      margin-top: 5px;
-      border: 1px solid #b1b1b1;
-      padding: 0;
-      padding-left: 10px;
-    }
-    #login-content button{
-      width: 304px;
-      height: 40px;
-      margin-bottom: 5px;
-      margin-top: 5px;
-      border: 1px solid #111111;
-      background-color: #111111;
-      color: white;
-      font-size: 12px;
-      cursor: pointer;
-    }
-    #login-find{
-      text-align: left;
-      padding: 0;
-      padding-bottom: 10px;
-      margin-top: 10px;
-      margin-bottom: 10px;
-      border-bottom: 1px solid #e4e4e4;
-    }
-    #login-find a{
-      padding: 10px;
-      margin: 0;
-      color: #929292;
-    }
-    #login-addlog{
-      text-align: left;
-      padding-left: 10px;
-      color: #929292;
-      line-height: 18px;
-    }
-    #addlog-button{
-      text-align: center;
-      padding: 11px;
-      margin-left: 0px;
-      margin-bottom: 200px;
-      margin-top: 5px;
-      font-size: 12px;
-      color: white;
-      border: 1px solid #cccccc;
-      background-color: white;
-      cursor: pointer;
-    }
-    #addlog-button a{
-      color: black;
-    }
   </style>
 </head>
 <body>
@@ -309,36 +229,22 @@
       </ul>
     </div>
   </div>
-  <div class=main>
-    <form class="login">
-      <div class="login-page">
-        <div id="login-title">
-          <legend>LOGIN</legend>
-        </div>
-        <div id="lock">
-          <img src="img/login01.png"><span>보안접속</span>
-        </div>
-        <div id="login-content">
-          <input type="text" placeholder="ID" id="login-id">
-          <input type="password" placeholder="PASSWORD" id="login-pw">
-          <button type="submit" id="login-button">LOGIN</button>
-        </div>
-        <div id="login-find">
-          <a href="#">FIND ID</a>
-          /
-          <a href="#">FIND PW</a>
-        </div>
-        <div id="login-addlog">
-          <p>
-            아직 회원이 아니십니까?<br>
-            회원가입을 하시면 다양한 혜택이 준비되어 있습니다.
-          </p>
-        </div>
-        <div id="addlog-button">
-          <a href="join.html">JOIN US</a>
+  <div class="main">
+    <div class="order">
+      <div class="titleArea">
+        <h1>주문서 작성</h1>
+      </div>
+      <div class="Benefits">
+        <h3 class="title">혜택정보</h3>
+        <div class="description">
+          <ul>
+            <li>가용적립금 : 0원</li>
+            <li>쿠폰 : 0개</li>
+          </ul>
         </div>
       </div>
-    </form>
+
+    </div>
   </div>
   <footer>
     <div class="customer">
@@ -367,49 +273,6 @@
 
 
   <script>
-    ////////////////////////////////// JSON-data ///////////////////////////////////
-    const storedData = localStorage.getItem('userData');
-    const userDB = JSON.parse(storedData);
-
-    ////////////////////////////////// 로그인 ///////////////////////////////////
-    const loginButton=document.querySelector("#login-button")
-    const loginID=document.querySelector("#login-id")
-    const loginPW=document.querySelector("#login-pw")
-    let loginIndex=0; //0 - 로그아웃, 1 - 로그인
-    localStorage.setItem('loginIndex', JSON.stringify(loginIndex));
-    //로그인 버튼 클릭 시 userDB 체크
-    loginButton.addEventListener("click", () => {
-      const user = findUserID(loginID.value);
-      
-      if (!user) {
-        alert("아이디가 없습니다");
-        return;
-      } else if (user.pw !== loginPW.value) {
-        alert("비밀번호가 틀렸습니다.");
-        return;
-      } 
-      console.log('Logging in...');
-      loginIndex = 1;
-      localStorage.setItem('loginIndex', JSON.stringify(loginIndex));
-      event.preventDefault()
-      openLogin('main-page.html');
-      
-    });
-    //id 찾는 함수
-    function findUserID(id){
-      return userDB.find(user=>user.id===id);
-    }
-    //pw 찾는 함수
-    function findUserPW(pw){
-      return userDB.find(user=>user.pw===pw);
-    }
-    
-    //로그인 함수
-    function openLogin(url) {
-      console.log(`Opening URL: ${url}`); // URL 확인
-      window.open(url, '_self');
-    }
-    ////////////////////////////////////////////////////////////////////////////
     ///////////////////////////// 새로운 창에서 열기 /////////////////////////////
     function openNewWindowS(url){
       window.open(url, '_blank', 'width=450, height=450');
