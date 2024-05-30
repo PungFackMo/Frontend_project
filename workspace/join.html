@@ -623,7 +623,7 @@
           </p>
           부 칙(시행일) 이 약관은 년 월 일부터 시행합니다.
         </div>
-        <span>이용약관에 동의하십니까?</span> <input type="checkbox" class="checkbox"> 동의함
+        <span>이용약관에 동의하십니까?</span> <input type="checkbox" class="checkbox" id="terms-use-checkbox"> 동의함
       </div>
       <div class="terms-perInfo">
         <span>[필수] 개인정보 수집 및 이용 동의</span>
@@ -656,7 +656,7 @@
           <br>※ 동의를 거부할 수 있으나 거부시 회원 가입이 불가능합니다.<br>
           </p>
         </div>
-        <span>개인정보 수집 및 이용에 동의하십니까?</span> <input type="checkbox" class="checkbox"> 동의함
+        <span>개인정보 수집 및 이용에 동의하십니까?</span> <input type="checkbox" class="checkbox" id="terms-perInfo-checkbox"> 동의함
       </div>
       <div class="terms-mss">
         <span>[필수] 개인정보 수집 및 이용 동의</span>
@@ -722,42 +722,51 @@
       const telMiddel=document.getElementById("user-telMiddel");
       const telFinal=document.getElementById("user-telFinal");
       const email=document.getElementById("user-email");
+      const termsUseCheckbox=document.getElementById("terms-use-checkbox");
+      const termsPerInfoCheckbox=document.getElementById("terms-perInfo-checkbox");
 
       //회원가입 input 조건
-      if(ID.value.trim() === ""){
-        alert("아이디를 입력하세요");
+      // if(ID.value.trim() === ""){
+      //   alert("아이디를 입력하세요");
+      //   return;
+      // }
+      // if(PW.value.trim() === ""){
+      //   alert("비밀번호를 입력하세요");
+      //   return;
+      // }
+      // if(PW.value!==PWCh.value){
+      //   alert("비밀번호가 다릅니다.");
+      //   return;
+      // }
+      // if(PWCh.value.trim() === ""){
+      //   alert("비밀번호확인을 입력하세요");
+      //   return;
+      // }
+      // if(name.value.trim() === ""){
+      //   alert("이름을 입력하세요");
+      //   return;
+      // }
+      // if(email.value.trim() === ""){
+      //   alert("이메일을 입력하세요");
+      //   return;
+      // }else if(!email.value.trim().includes("@")){
+      //   alert("이메일에 @가 포함되어 있지 않습니다.\n이메일 형식에 맞게 입력해주세요.")
+      //   return;
+      // }else if(!email.value.trim().includes(".")){
+      //   alert("이메일에 .이 포함되어 있지 않습니다.\n이메일 형식에 맞게 입력해주세요.")
+      //   return;
+      // }else if(email.value.trim().split("@")[0].length<1){
+      //   alert("이메일 형식에 맞게 입력해주세요.")
+      //   return;
+      // }else if(email.value.trim().split("@")[1].split(".")[0].length<1){
+      //   alert("이메일 형식에 맞게 입력해주세요.")
+      //   return;
+      // }
+      if(!termsUseCheckbox.checked){
+        alert("필수 약관에 동의하십시오.")
         return;
-      }
-      if(PW.value.trim() === ""){
-        alert("비밀번호를 입력하세요");
-        return;
-      }
-      if(PW.value!==PWCh.value){
-        alert("비밀번호가 다릅니다.");
-        return;
-      }
-      if(PWCh.value.trim() === ""){
-        alert("비밀번호확인을 입력하세요");
-        return;
-      }
-      if(name.value.trim() === ""){
-        alert("이름을 입력하세요");
-        return;
-      }
-      if(email.value.trim() === ""){
-        alert("이메일을 입력하세요");
-        return;
-      }else if(!email.value.trim().includes("@")){
-        alert("이메일에 @가 포함되어 있지 않습니다.\n이메일 형식에 맞게 입력해주세요.")
-        return;
-      }else if(!email.value.trim().includes(".")){
-        alert("이메일에 .이 포함되어 있지 않습니다.\n이메일 형식에 맞게 입력해주세요.")
-        return;
-      }else if(email.value.trim().split("@")[0].length<1){
-        alert("이메일 형식에 맞게 입력해주세요.")
-        return;
-      }else if(email.value.trim().split("@")[1].split(".")[0].length<1){
-        alert("이메일 형식에 맞게 입력해주세요.")
+      }else if(!termsPerInfoCheckbox.checked){
+        alert("필수 약관에 동의하십시오.")
         return;
       }
 
@@ -772,7 +781,6 @@
           {userID:paddedIDIndex.value, id:ID.value , pw:PW.value, name:name.value, telFront:telFront.value, telMiddle:telMiddel.value, telFinal:telFinal.value, email:email.value}
         )
         alert("회원가입이 완료되었습니다")
-        console.log(userDB)
         break;
         }
       }
